@@ -209,53 +209,6 @@
 .faq-card .q::before { content: "Q"; display: grid; place-items: center; width: 28px; height: 28px; background: var(--pink-500); color: white; border-radius: 8px; font-size: 14px; flex-shrink: 0; }
 .faq-card .a { font-size: 16px; color: var(--ink-soft); line-height: 1.9; padding-left: 40px; margin: 0; }
 
-/* ===== ご家族ハブ ===== */
-.family-hub-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-@media (max-width: 600px) {
-  .family-hub-grid { grid-template-columns: 1fr; }
-}
-.family-hub-card {
-  background: var(--hub-bg);
-  border: 1.5px solid var(--hub-border);
-  border-left: 4px solid var(--hub-color);
-  border-radius: var(--radius);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.hub-icon { font-size: 28px; line-height: 1; }
-.hub-badge {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--hub-color);
-  letter-spacing: .07em;
-}
-.hub-title {
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.5;
-  margin: 0;
-}
-.hub-body {
-  font-size: 13px;
-  color: var(--ink-soft);
-  line-height: 1.7;
-  margin: 0;
-  flex: 1;
-}
-.hub-link {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--hub-color);
-  text-decoration: none;
-  margin-top: 4px;
-}
-.hub-link:hover { text-decoration: underline; }
 </style>
 </head>
 <body data-vacancy="true" data-breadcrumb='["ちはら台"]'>
