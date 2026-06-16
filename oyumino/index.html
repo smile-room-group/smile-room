@@ -683,6 +683,54 @@
 }
 .faq-card .a { font-size: 16px; color: var(--ink-soft); line-height: 1.9; padding-left: 40px; margin: 0; }
 
+/* ===== ご家族ハブ ===== */
+.family-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (max-width: 600px) {
+  .family-hub-grid { grid-template-columns: 1fr; }
+}
+.family-hub-card {
+  background: var(--hub-bg);
+  border: 1.5px solid var(--hub-border);
+  border-left: 4px solid var(--hub-color);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.hub-icon { font-size: 28px; line-height: 1; }
+.hub-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--hub-color);
+  letter-spacing: .07em;
+}
+.hub-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+}
+.hub-body {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+.hub-link {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--hub-color);
+  text-decoration: none;
+  margin-top: 4px;
+}
+.hub-link:hover { text-decoration: underline; }
+
 </style>
 </head>
 <body data-vacancy="true">
@@ -1301,6 +1349,51 @@
           フォローする
         </span>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ご家族の方へ（ハブ） ========== -->
+<section class="section" id="for-family" style="background:var(--bg-warm);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:40px;">
+      <span class="eyebrow">ご家族の方へ</span>
+      <h2 class="section-title">「ここで大丈夫？」の<br>不安にお答えします</h2>
+      <p class="section-lede">入居をご検討のご家族からよくいただく4つのご心配にお答えします。</p>
+    </div>
+    <div class="family-hub-grid">
+      <!-- カード① 費用 -->
+      <div class="family-hub-card" style="--hub-color: var(--pink-600); --hub-bg: var(--pink-50); --hub-border: var(--pink-200);">
+        <div class="hub-icon">💰</div>
+        <div class="hub-badge">不安①</div>
+        <h3 class="hub-title">費用が実際<br>いくらかかるか分からない</h3>
+        <p class="hub-body">住居費・食費・介護費をすべて含めた月額の目安を、介護度や自己負担割合に合わせてその場でシミュレーションできます。</p>
+        <a class="hub-link" href="pricing.html#simulator">料金シミュレーターを使う →</a>
+      </div>
+      <!-- カード② 緊急時 -->
+      <div class="family-hub-card" style="--hub-color: oklch(0.38 0.1 240); --hub-bg: oklch(0.97 0.02 240); --hub-border: oklch(0.82 0.06 240);">
+        <div class="hub-icon">🚨</div>
+        <div class="hub-badge">不安②</div>
+        <h3 class="hub-title">夜中や緊急時の<br>対応が心配</h3>
+        <p class="hub-body">24時間スタッフ常駐・全室緊急呼出ボタン完備。夜間も定期巡回を行っています。何かあればすぐに対応します。</p>
+        <a class="hub-link" href="faq.html">緊急時の対応を詳しく見る →</a>
+      </div>
+      <!-- カード③ 本人意思 -->
+      <div class="family-hub-card" style="--hub-color: oklch(0.38 0.12 145); --hub-bg: oklch(0.97 0.02 145); --hub-border: oklch(0.82 0.07 145);">
+        <div class="hub-icon">😊</div>
+        <div class="hub-badge">不安③</div>
+        <h3 class="hub-title">親が施設を<br>嫌がるかもしれない</h3>
+        <p class="hub-body">ここは「施設」ではなく「賃貸住宅」です。自分のペースで暮らし、好きな介護サービスを選べます。入居者の一日をご覧ください。</p>
+        <a class="hub-link" href="lifestyle.html">入居者の暮らしを見る →</a>
+      </div>
+      <!-- カード④ 介護進行 -->
+      <div class="family-hub-card" style="--hub-color: oklch(0.45 0.12 50); --hub-bg: oklch(0.97 0.03 70); --hub-border: oklch(0.85 0.07 60);">
+        <div class="hub-icon">🏥</div>
+        <div class="hub-badge">不安④</div>
+        <h3 class="hub-title">介護が重くなったら<br>追い出される？</h3>
+        <p class="hub-body">自立〜要介護5まで対応しています。介護度が上がっても、外部の介護事業者と連携しながら同じ住まいで暮らし続けられます。</p>
+        <a class="hub-link" href="faq.html">入居条件・継続について →</a>
+      </div>
     </div>
   </div>
 </section>
