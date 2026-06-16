@@ -127,15 +127,34 @@
     const bar = document.createElement("div");
     bar.className = "floating-bar";
     bar.innerHTML = `
-    <a href="tel:0436633618" class="fb-tel" aria-label="電話で問い合わせ">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      電話で問い合わせ
+<a href="tel:0436633618" class="fb-tel" aria-label="電話で問い合わせ">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  電話する
+</a>
+<a href="contact.html" class="fb-cta" aria-label="見学を予約する">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+  見学予約（無料）
+</a>
+`;
+    // トップページでは2施設の電話番号を並列表示
+    const isTop = window.location.pathname.endsWith('/smile-room/') ||
+                  window.location.pathname.endsWith('/smile-room/index.html') ||
+                  (window.location.pathname === '/' && !window.location.href.includes('/oyumino') && !window.location.href.includes('/chiharadai'));
+    if (isTop) {
+      bar.innerHTML = `
+  <div class="fb-top-label">施設を選んでお電話ください</div>
+  <div class="fb-top-grid">
+    <a href="tel:0433107467" class="fb-top-item fb-top-oyumino" aria-label="おゆみ野に電話">
+      <span class="fb-top-name">おゆみ野</span>
+      <span class="fb-top-tel">043-310-7467</span>
     </a>
-    <a href="contact.html" class="fb-cta" aria-label="見学を予約する">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      見学を予約する
+    <a href="tel:0436633618" class="fb-top-item fb-top-chiharadai" aria-label="ちはら台に電話">
+      <span class="fb-top-name">ちはら台</span>
+      <span class="fb-top-tel">0436-63-3618</span>
     </a>
+  </div>
   `;
+    }
     document.body.appendChild(bar);
   }
 
