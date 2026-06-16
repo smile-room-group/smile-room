@@ -393,18 +393,29 @@
       </div>
 
       <div class="sim-row">
-        <label class="sim-label">介護サービス（目安）</label>
-        <div class="sim-opts" id="sim-care">
-          <button class="sim-opt active" data-val="0" onclick="simSelect(this,'sim-care')">利用しない<small>+0円</small></button>
-          <button class="sim-opt" data-val="15000" onclick="simSelect(this,'sim-care')">軽め（週2〜3回）<small>+約15,000円</small></button>
-          <button class="sim-opt" data-val="30000" onclick="simSelect(this,'sim-care')">しっかり（毎日）<small>+約30,000円</small></button>
+        <label class="sim-label">介護度</label>
+        <div class="sim-opts" id="sim-care-level">
+          <button class="sim-opt active" data-val="0" onclick="simSelect(this,'sim-care-level')">なし<small>+0円</small></button>
+          <button class="sim-opt" data-val="1" onclick="simSelect(this,'sim-care-level')">要介護1<small>+約12,000円</small></button>
+          <button class="sim-opt" data-val="2" onclick="simSelect(this,'sim-care-level')">要介護2<small>+約17,000円</small></button>
+          <button class="sim-opt" data-val="3" onclick="simSelect(this,'sim-care-level')">要介護3<small>+約25,000円</small></button>
+          <button class="sim-opt" data-val="4" onclick="simSelect(this,'sim-care-level')">要介護4・5<small>+約35,000円</small></button>
+        </div>
+      </div>
+
+      <div class="sim-row">
+        <label class="sim-label">介護保険の自己負担</label>
+        <div class="sim-opts" id="sim-burden">
+          <button class="sim-opt active" data-val="1" onclick="simSelect(this,'sim-burden')">1割<small>（多くの方）</small></button>
+          <button class="sim-opt" data-val="2" onclick="simSelect(this,'sim-burden')">2割</button>
+          <button class="sim-opt" data-val="3" onclick="simSelect(this,'sim-burden')">3割</button>
         </div>
       </div>
 
       <div class="sim-result">
         <div class="sim-result-label">概算月額（税込）</div>
         <div class="sim-result-num" id="sim-total">102,000<span>円</span></div>
-        <div class="sim-result-note">※ 介護サービスは介護保険自己負担分（1〜3割）の目安です。実際の金額はケアマネージャーにご確認ください。</div>
+        <div class="sim-result-note">※ 介護サービスは選択した介護度・自己負担割合の目安です。実際の金額はケアマネージャーにご確認ください。</div>
       </div>
     </div>
   </div>
@@ -418,18 +429,22 @@ function simSelect(btn, groupId) {
   btn.classList.add('active');
   simCalc();
 }
+// 介護度別・1割負担の月額目安（1割基準額）
+var CARE_COST_1 = { 0: 0, 1: 12000, 2: 17000, 3: 25000, 4: 35000 };
+
 function simCalc() {
   var base = parseInt(document.querySelector('#sim-type .sim-opt.active').dataset.val, 10);
   var meal = parseInt(document.querySelector('#sim-meal .sim-opt.active').dataset.val, 10);
-  var care = parseInt(document.querySelector('#sim-care .sim-opt.active').dataset.val, 10);
+  var careLevel = parseInt(document.querySelector('#sim-care-level .sim-opt.active').dataset.val, 10);
+  var burden = parseInt(document.querySelector('#sim-burden .sim-opt.active').dataset.val, 10);
+  var care = Math.round((CARE_COST_1[careLevel] || 0) * burden);
   var total = base + meal + care;
   var elem = document.getElementById('sim-total');
-  elem.textContent = total.toLocaleString();
-  if (!elem.querySelector('span')) {
-    var span = document.createElement('span');
-    span.textContent = '円';
-    elem.appendChild(span);
-  }
+  while (elem.firstChild) { elem.removeChild(elem.firstChild); }
+  elem.appendChild(document.createTextNode(total.toLocaleString()));
+  var span = document.createElement('span');
+  span.textContent = care > 0 ? '円〜' : '円';
+  elem.appendChild(span);
 }
 </script>
 <script src="../js/shared.js"></script>
