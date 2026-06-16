@@ -245,65 +245,6 @@
     </table>
     <p class="mt-3" style="font-size:13.5px;color:var(--ink-mute);">※ 入居時に入居一時金50,000円（一回のみ）が必要です。礼金・更新料はかかりません。</p>
 
-    <!-- ========== シミュレーター ========== -->
-    <div class="simulator-wrap reveal" id="simulator">
-      <h3 class="section-title" style="font-size:22px;margin-bottom:28px;">月額費用をシミュレーションする</h3>
-      <div class="sim-steps">
-        <div>
-          <div class="sim-step-label"><span class="step-num">1</span> お部屋タイプ</div>
-          <div class="sim-options">
-            <label class="sim-option">
-              <input type="radio" name="sim-room" value="102000" checked> スタンダード（102,000円〜）
-            </label>
-            <label class="sim-option">
-              <input type="radio" name="sim-room" value="105000"> ゆったり（105,000円〜）
-            </label>
-          </div>
-        </div>
-        <div>
-          <div class="sim-step-label"><span class="step-num">2</span> 食事プラン</div>
-          <div class="sim-options">
-            <label class="sim-option">
-              <input type="radio" name="sim-meal" value="0" checked> 利用しない
-            </label>
-            <label class="sim-option">
-              <input type="radio" name="sim-meal" value="32000"> 昼・夕のみ（+32,000円/月）
-            </label>
-            <label class="sim-option">
-              <input type="radio" name="sim-meal" value="45000"> 1日3食（+45,000円/月）
-            </label>
-          </div>
-        </div>
-        <div>
-          <div class="sim-step-label"><span class="step-num">3</span> 介護サービスの目安</div>
-          <div class="sim-options">
-            <label class="sim-option">
-              <input type="radio" name="sim-care" value="0" checked> 今は必要ない
-            </label>
-            <label class="sim-option">
-              <input type="radio" name="sim-care" value="15000"> 週1〜2回程度（約+15,000円）
-            </label>
-            <label class="sim-option">
-              <input type="radio" name="sim-care" value="30000"> 週3〜4回程度（約+30,000円）
-            </label>
-            <label class="sim-option">
-              <input type="radio" name="sim-care" value="50000"> 毎日（約+50,000円）
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="sim-result">
-        <div class="sim-result-rows">
-          <div class="sim-result-row"><span>家賃・管理費・食費</span><span id="sim-val-room">102,000円</span></div>
-          <div class="sim-result-row" id="sim-row-meal" style="display:none;"><span>食事プラン</span><span id="sim-val-meal">45,000円</span></div>
-          <div class="sim-result-row" id="sim-row-care" style="display:none;"><span>介護サービス目安</span><span id="sim-val-care">0円</span></div>
-          <div class="sim-result-row total"><span>月額の目安</span><span></span></div>
-        </div>
-        <div class="sim-total-num" id="sim-total">102,000<span>円／月〜</span></div>
-        <p class="sim-note">※ 介護サービスは介護保険適用後の自己負担目安です。実際の金額はご相談ください。</p>
-        <a class="btn btn-primary" href="contact.html" style="margin-top:18px;display:inline-flex;">詳しく相談する →</a>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -448,24 +389,5 @@ function simCalc() {
 }
 </script>
 <script src="../js/shared.js"></script>
-<script>
-(function () {
-  function fmt(n) { return n.toLocaleString("ja-JP"); }
-  function calc() {
-    var room = parseInt(document.querySelector('[name="sim-room"]:checked').value);
-    var meal = parseInt(document.querySelector('[name="sim-meal"]:checked').value);
-    var care = parseInt(document.querySelector('[name="sim-care"]:checked').value);
-    document.getElementById("sim-val-room").textContent = fmt(room) + "円";
-    document.getElementById("sim-row-meal").style.display = meal > 0 ? "" : "none";
-    document.getElementById("sim-val-meal").textContent = fmt(meal) + "円";
-    document.getElementById("sim-row-care").style.display = care > 0 ? "" : "none";
-    document.getElementById("sim-val-care").textContent = "約" + fmt(care) + "円";
-    document.getElementById("sim-total").innerHTML = fmt(room + meal + care) + '<span>円／月〜</span>';
-  }
-  document.querySelectorAll('[name="sim-room"],[name="sim-meal"],[name="sim-care"]')
-    .forEach(function(el) { el.addEventListener("change", calc); });
-  calc();
-})();
-</script>
 </body>
 </html>
