@@ -39,16 +39,6 @@
 .plan-list li { display: flex; gap: 10px; font-size: 14px; align-items: flex-start; }
 .plan-list li::before { content: ""; width: 18px; height: 18px; background: var(--pink-100); border-radius: 50%; flex-shrink: 0; margin-top: 3px; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23335c7a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>"); background-repeat: no-repeat; background-position: center; }
 
-/* シミュレーター */
-.simulator-wrap { background: var(--card); border-radius: var(--radius-lg); padding: 36px; border: 1px solid var(--line-soft); margin-top: 40px; }
-.sim-steps { display: flex; flex-direction: column; gap: 28px; margin-bottom: 28px; }
-.sim-step-label { font-family: "Zen Maru Gothic"; font-weight: 700; font-size: 15px; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
-.step-num { display: inline-grid; place-items: center; width: 26px; height: 26px; background: var(--pink-500); color: white; border-radius: 50%; font-size: 13px; flex-shrink: 0; }
-.sim-options { display: flex; gap: 10px; flex-wrap: wrap; }
-.sim-option { padding: 10px 16px; border: 1.5px solid var(--line); border-radius: 100px; cursor: pointer; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; background: white; transition: all .15s; }
-.sim-option:has(input:checked) { background: var(--pink-50); border-color: var(--pink-400); color: var(--pink-600); }
-.sim-result { background: var(--pink-50); border-radius: var(--radius); padding: 24px; border: 1px solid var(--pink-200); }
-.sim-result-rows { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
 .sim-result-row { display: flex; justify-content: space-between; font-size: 14px; }
 .sim-result-row.total { font-family: "Zen Maru Gothic"; font-weight: 700; font-size: 15px; border-top: 1px dashed var(--pink-300); padding-top: 8px; }
 .sim-total-num { font-family: "Zen Maru Gothic"; font-weight: 700; font-size: clamp(36px, 6vw, 54px); color: var(--pink-600); line-height: 1; margin-bottom: 8px; }
