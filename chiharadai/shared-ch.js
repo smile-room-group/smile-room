@@ -218,3 +218,122 @@
     init();
   }
 })();
+
+/* ===== FAQ Bot ===== */
+const FAQ_DATA_CHIHARADAI = [
+  {
+    cat: "💰 費用・料金について",
+    items: [
+      { q: "月額はいくらですか？", a: "月額103,000円（食費・管理費込み）です。入居一時金は50,000円（一回のみ）です。" },
+      { q: "介護費用は別途かかりますか？", a: "はい。介護サービスは外部の介護事業者をご自由に選んでご利用いただけます。費用は介護度・ご利用頻度・自己負担割合によって異なります。料金ページのシミュレーターでおおよその目安をご確認いただけます。" },
+      { q: "年金だけで支払えますか？", a: "月額10万円台で住居費・食費・管理費がすべて含まれています。年金の金額やご状況によって異なりますが、比較的ご利用いただきやすい価格帯です。詳しくはお気軽にご相談ください。" },
+    ]
+  },
+  {
+    cat: "🚨 緊急時・夜間の対応",
+    items: [
+      { q: "夜間スタッフは常駐していますか？", a: "はい。24時間スタッフが常駐しています。夜間も定期的に巡回し、緊急時はすぐに対応します。" },
+      { q: "夜中に転んだらどうなりますか？", a: "全室に緊急呼出ボタンを設置しています。ボタンを押すと担当スタッフがすぐに駆けつけます。夜間も巡回していますので、気づいた場合は即対応します。" },
+      { q: "救急車を呼ぶ判断は誰がしますか？", a: "スタッフが状況を確認し、必要と判断した場合はすぐに119番通報します。また、あらかじめご家族に緊急連絡先をご登録いただいており、重要な場面では速やかにご連絡します。" },
+    ]
+  },
+  {
+    cat: "👴 入居の条件・手続き",
+    items: [
+      { q: "入居条件を教えてください。", a: "ちはら台は自立〜要介護5の幅広い方を対象としています。認知症の方もご相談ください。まずはお電話かフォームでご相談いただき、見学・面談を経て入居審査を行います。" },
+      { q: "見学は家族だけでもできますか？", a: "はい、ご家族だけでのご見学・ご相談も大歓迎です。ご本人のご都合に合わせて、後日ご一緒にお越しいただくことも可能です。" },
+      { q: "入居までどのくらい時間がかかりますか？", a: "見学→面談→入居審査→契約→入居という流れで、通常2〜4週間程度です。お急ぎのご事情がある場合はご相談ください。" },
+    ]
+  },
+  {
+    cat: "🏥 介護が重くなったら",
+    items: [
+      { q: "要介護度が上がっても住み続けられますか？", a: "はい。自立〜要介護5まで対応しています。介護度が上がった場合も、外部の介護事業者と連携しながら同じ住まいで暮らし続けていただけます。" },
+      { q: "認知症になったら退去しなければなりませんか？", a: "認知症の程度によってはご相談の上、対応可能です。まずはお気軽にご相談ください。" },
+      { q: "医療処置が必要になったらどうなりますか？", a: "施設ではなく賃貸住宅のため、医療行為はスタッフが行うことはできません。ただし近隣医療機関との連携をサポートします。" },
+    ]
+  },
+  {
+    cat: "🍱 食事・生活について",
+    items: [
+      { q: "食事はどのようなものですか？", a: "栄養士監修の3食を食堂でご提供しています。食費は月額に含まれており、別途追加料金はかかりません。体調に合わせた対応も可能です。" },
+      { q: "家族はいつでも面会できますか？", a: "はい。時間の制限はなく、自由にお越しいただけます。ご家族と一緒に食堂でお食事したり、お部屋でゆっくり過ごすこともできます。" },
+      { q: "ペットは飼えますか？", a: "申し訳ありませんが、現在ペットの飼育はお断りしております。" },
+    ]
+  },
+];
+
+function setupFaqBotCh(faqData, telHref, telLabel, ctaHref) {
+  const btn = document.createElement("button");
+  btn.className = "faq-bot-btn";
+  btn.setAttribute("aria-label", "よくある質問を開く");
+  btn.innerHTML = `<span>💬</span> よくある質問`;
+
+  const panel = document.createElement("div");
+  panel.className = "faq-bot-panel";
+  panel.setAttribute("role", "dialog");
+  panel.setAttribute("aria-label", "よくある質問");
+
+  function renderCats() {
+    panel.innerHTML = `
+      <div class="faq-bot-head">
+        <span>💬 よくある質問</span>
+        <button class="faq-bot-close" aria-label="閉じる">✕</button>
+      </div>
+      <div class="faq-bot-body">
+        <div class="faq-bot-hint">カテゴリを選んでください</div>
+        ${faqData.map((c, i) => `<button class="faq-bot-cat" data-cat="${i}">${c.cat}</button>`).join('')}
+      </div>
+      <div class="faq-bot-footer">
+        <a href="${telHref}" class="faq-footer-tel">📞 ${telLabel}</a>
+        <a href="${ctaHref}" class="faq-footer-cta">📅 見学予約</a>
+      </div>
+    `;
+    panel.querySelector(".faq-bot-close").addEventListener("click", closeBot);
+    panel.querySelectorAll(".faq-bot-cat").forEach(b => {
+      b.addEventListener("click", () => renderQuestions(Number(b.dataset.cat)));
+    });
+  }
+
+  function renderQuestions(catIdx) {
+    const cat = faqData[catIdx];
+    panel.querySelector(".faq-bot-body").innerHTML = `
+      <button class="faq-bot-back">← 戻る</button>
+      <div class="faq-bot-hint">${cat.cat}</div>
+      ${cat.items.map((item, i) => `<button class="faq-bot-q" data-cat="${catIdx}" data-q="${i}">${item.q}</button>`).join('')}
+    `;
+    panel.querySelector(".faq-bot-back").addEventListener("click", renderCats);
+    panel.querySelectorAll(".faq-bot-q").forEach(b => {
+      b.addEventListener("click", () => renderAnswer(Number(b.dataset.cat), Number(b.dataset.q)));
+    });
+  }
+
+  function renderAnswer(catIdx, qIdx) {
+    const item = faqData[catIdx].items[qIdx];
+    panel.querySelector(".faq-bot-body").innerHTML = `
+      <button class="faq-bot-back">← 戻る</button>
+      <div class="faq-bot-answer">
+        <div class="faq-q-text">Q. ${item.q}</div>
+        <div class="faq-a-text">${item.a}</div>
+      </div>
+    `;
+    panel.querySelector(".faq-bot-back").addEventListener("click", () => renderQuestions(catIdx));
+  }
+
+  function openBot() {
+    renderCats();
+    panel.classList.add("open");
+    btn.style.display = "none";
+  }
+  function closeBot() {
+    panel.classList.remove("open");
+    btn.style.display = "";
+  }
+
+  btn.addEventListener("click", openBot);
+  document.body.appendChild(btn);
+  document.body.appendChild(panel);
+}
+
+// ちはら台用で初期化
+setupFaqBotCh(FAQ_DATA_CHIHARADAI, "tel:0436633618", "電話する", "contact.html");
