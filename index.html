@@ -535,6 +535,16 @@
   color: oklch(0.55 0.01 0);
   border: 1.5px dashed oklch(0.78 0.012 30);
 }
+.f-btn.blue {
+  background: oklch(0.470 0.092 225);
+  color: #fff;
+  box-shadow: 0 4px 18px oklch(0.470 0.092 225 / 0.3);
+}
+.f-btn.blue:hover {
+  background: oklch(0.42 0.092 225);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px oklch(0.470 0.092 225 / 0.42);
+}
 .prep-tel-box {
   background: oklch(0.99 0.005 50);
   border: 1.5px dashed oklch(0.83 0.015 30);
@@ -1109,16 +1119,6 @@
       「スマイルーム」は、介護施設ではなく高齢者対応賃貸住宅です。<br>
       自由に介護サービスを選び、自分のペースで暮らせる場所を。
     </p>
-    <div class="hero-cta a4">
-      <a href="oyumino/" class="btn-primary-hero">
-        おゆみ野を見る
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="chiharadai/" class="btn-ghost-hero" style="background:oklch(0.470 0.092 225);color:#fff;border-color:oklch(0.470 0.092 225);box-shadow:0 8px 28px oklch(0.470 0.092 225 / 0.35);">
-        ちはら台を見る
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
   </div>
 
   <div class="scroll-hint a4">
@@ -1160,6 +1160,41 @@
           <h3>全室バリアフリー設計</h3>
           <p>車椅子対応の浴室・廊下・エントランス。安全で快適な住環境を整えています。</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ご家族の方へ -->
+<section style="padding:clamp(60px,8vw,100px) 0;background:var(--bg-warm,#fdf6f0);">
+  <div class="wrap">
+    <div class="reveal" style="max-width:760px;margin:0 auto;text-align:center;">
+      <p class="sec-label" style="justify-content:center;">ご家族の方へ</p>
+      <h2 style="font-size:clamp(26px,3.6vw,42px);font-weight:700;line-height:1.4;margin-bottom:20px;">離れて暮らすご両親のこと、<br>心配ではありませんか？</h2>
+      <p style="font-size:16px;color:#666;line-height:1.9;margin-bottom:40px;">「施設に入れるのはかわいそう」「でも一人でいるのは心配」——そのジレンマに、スマイルームは<strong>第三の選択肢</strong>として応えます。介護施設ではなく、自分らしく暮らしながら必要なサポートだけを受けられる、新しい住まいのかたちです。</p>
+    </div>
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-bottom:40px;">
+      <div style="background:#fff;border-radius:16px;padding:28px;border:1px solid #eee;text-align:center;">
+        <div style="font-size:32px;margin-bottom:12px;">🏠</div>
+        <h3 style="font-size:16px;margin-bottom:8px;">本人の意志を尊重できる</h3>
+        <p style="font-size:14px;color:#666;line-height:1.7;margin:0;">「施設ではなく、住まいに住む」という選択。本人の自尊心を守りながら、必要なケアをそろえられます。</p>
+      </div>
+      <div style="background:#fff;border-radius:16px;padding:28px;border:1px solid #eee;text-align:center;">
+        <div style="font-size:32px;margin-bottom:12px;">👀</div>
+        <h3 style="font-size:16px;margin-bottom:8px;">24時間の見守りで安心</h3>
+        <p style="font-size:14px;color:#666;line-height:1.7;margin:0;">スタッフが常駐し、緊急時も即対応。遠くにお住まいのご家族でも、安心して日常を送っていただけます。</p>
+      </div>
+      <div style="background:#fff;border-radius:16px;padding:28px;border:1px solid #eee;text-align:center;">
+        <div style="font-size:32px;margin-bottom:12px;">💰</div>
+        <h3 style="font-size:16px;margin-bottom:8px;">費用が月額定額でわかりやすい</h3>
+        <p style="font-size:14px;color:#666;line-height:1.7;margin:0;">食費・管理費込みで月額10.2万円〜。複雑な追加費用がなく、ご家族での費用計画が立てやすい構造です。</p>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center;">
+      <p style="font-size:13px;color:#888;margin-bottom:16px;">まずはどちらの施設か、ご家族だけでの見学・ご相談も歓迎しています。</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="oyumino/contact.html" style="display:inline-block;padding:14px 28px;background:#c06070;color:#fff;border-radius:100px;font-weight:700;text-decoration:none;font-size:15px;">おゆみ野に相談する</a>
+        <a href="chiharadai/contact.html" style="display:inline-block;padding:14px 28px;background:oklch(0.470 0.092 225);color:#fff;border-radius:100px;font-weight:700;text-decoration:none;font-size:15px;">ちはら台に相談する</a>
       </div>
     </div>
   </div>
@@ -1247,135 +1282,10 @@
             <li>介護サービスは外部から自由選択・自立〜要介護5対応</li>
             <li>24時間スタッフ常駐・入居一時金50,000円</li>
           </ul>
-          <a href="chiharadai/" class="f-btn" style="background:oklch(0.470 0.092 225);color:white;box-shadow:0 4px 18px oklch(0.470 0.092 225 / 0.3);">施設詳細・見学予約 →</a>
+          <a href="chiharadai/" class="f-btn blue">施設詳細・見学予約 →</a>
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- COMPARE -->
-<section class="compare-section">
-  <div class="wrap">
-    <p class="sec-label">2つの施設をくらべる</p>
-    <h2 class="sec-title">どちらが合っていますか？<br>2施設かんたん比較</h2>
-
-    <div class="compare-grid">
-      <!-- おゆみ野 -->
-      <div class="compare-card reveal">
-        <div class="compare-card-head">
-          <span class="compare-dot" style="background:var(--pink-500);"></span>
-          <span class="compare-card-title">スマイルームおゆみ野</span>
-        </div>
-        <div class="compare-who" style="background:oklch(0.97 0.018 15 / 0.6);color:oklch(0.50 0.115 14);">こんな方におすすめ</div>
-        <ul class="compare-list" style="--chk:var(--pink-500);">
-          <li style="--chk:var(--pink-500);" >食事を月ごとに自由に選びたい方</li>
-          <li>千葉市緑区（誉田・鎌取）エリア在住の方</li>
-          <li>要介護1〜4の方</li>
-          <li>リフト付き個浴を希望する方</li>
-          <li>A/Bタイプから部屋サイズを選びたい方</li>
-        </ul>
-      </div>
-      <!-- ちはら台 -->
-      <div class="compare-card reveal" data-delay="1">
-        <div class="compare-card-head">
-          <span class="compare-dot" style="background:oklch(0.470 0.092 225);"></span>
-          <span class="compare-card-title">スマイルームちはら台</span>
-        </div>
-        <div class="compare-who" style="background:oklch(0.96 0.018 225 / 0.6);color:oklch(0.470 0.092 225);">こんな方におすすめ</div>
-        <ul class="compare-list">
-          <li style="--chk:oklch(0.470 0.092 225);">3食込みで月額を固定したい方</li>
-          <li>市原市（ちはら台・誉田）エリア在住の方</li>
-          <li>自立〜要介護5の方（幅広く対応）</li>
-          <li>介護用ベッド付きの部屋を希望する方</li>
-          <li>定員が多く選択肢が豊富な施設を探す方</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="compare-table-wrap">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th class="th-pink">おゆみ野</th>
-            <th class="th-blue">ちはら台</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>月額</td>
-            <td class="val-pink">102,000〜105,000円</td>
-            <td class="val-blue">103,000円</td>
-          </tr>
-          <tr>
-            <td>食事</td>
-            <td>月ごとに選択可</td>
-            <td>3食込み（定額）</td>
-          </tr>
-          <tr>
-            <td>入居一時金</td>
-            <td>50,000円</td>
-            <td>50,000円</td>
-          </tr>
-          <tr>
-            <td>定員</td>
-            <td>31名（30室）</td>
-            <td>46名（44室）</td>
-          </tr>
-          <tr>
-            <td>居室面積</td>
-            <td>11.18〜18.84㎡</td>
-            <td>11.18〜16.77㎡</td>
-          </tr>
-          <tr>
-            <td>入居条件</td>
-            <td>要介護1〜4</td>
-            <td>自立〜要介護5</td>
-          </tr>
-          <tr>
-            <td>浴室</td>
-            <td>リフト付き個浴・一般個浴</td>
-            <td>個浴</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ご家族の方へ -->
-<section style="padding:clamp(60px,8vw,100px) 0;background:var(--bg-warm,#fdf6f0);">
-  <div class="wrap">
-    <div class="reveal" style="max-width:760px;margin:0 auto;text-align:center;">
-      <p class="sec-label" style="justify-content:center;">ご家族の方へ</p>
-      <h2 style="font-size:clamp(26px,3.6vw,42px);font-weight:700;line-height:1.4;margin-bottom:20px;">離れて暮らすご両親のこと、<br>心配ではありませんか？</h2>
-      <p style="font-size:16px;color:#666;line-height:1.9;margin-bottom:40px;">「施設に入れるのはかわいそう」「でも一人でいるのは心配」——そのジレンマに、スマイルームは<strong>第三の選択肢</strong>として応えます。介護施設ではなく、自分らしく暮らしながら必要なサポートだけを受けられる、新しい住まいのかたちです。</p>
-    </div>
-    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-bottom:40px;">
-      <div style="background:#fff;border-radius:16px;padding:28px;border:1px solid #eee;text-align:center;">
-        <div style="font-size:32px;margin-bottom:12px;">🏠</div>
-        <h3 style="font-size:16px;margin-bottom:8px;">本人の意志を尊重できる</h3>
-        <p style="font-size:14px;color:#666;line-height:1.7;margin:0;">「施設ではなく、住まいに住む」という選択。本人の自尊心を守りながら、必要なケアをそろえられます。</p>
-      </div>
-      <div style="background:#fff;border-radius:16px;padding:28px;border:1px solid #eee;text-align:center;">
-        <div style="font-size:32px;margin-bottom:12px;">👀</div>
-        <h3 style="font-size:16px;margin-bottom:8px;">24時間の見守りで安心</h3>
-        <p style="font-size:14px;color:#666;line-height:1.7;margin:0;">スタッフが常駐し、緊急時も即対応。遠くにお住まいのご家族でも、安心して日常を送っていただけます。</p>
-      </div>
-      <div style="background:#fff;border-radius:16px;padding:28px;border:1px solid #eee;text-align:center;">
-        <div style="font-size:32px;margin-bottom:12px;">💰</div>
-        <h3 style="font-size:16px;margin-bottom:8px;">費用が月額定額でわかりやすい</h3>
-        <p style="font-size:14px;color:#666;line-height:1.7;margin:0;">食費・管理費込みで月額10.2万円〜。複雑な追加費用がなく、ご家族での費用計画が立てやすい構造です。</p>
-      </div>
-    </div>
-    <div class="reveal" style="text-align:center;">
-      <p style="font-size:13px;color:#888;margin-bottom:16px;">まずはどちらの施設か、ご家族だけでの見学・ご相談も歓迎しています。</p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="oyumino/contact.html" style="display:inline-block;padding:14px 28px;background:#c06070;color:#fff;border-radius:100px;font-weight:700;text-decoration:none;font-size:15px;">おゆみ野に相談する</a>
-        <a href="chiharadai/contact.html" style="display:inline-block;padding:14px 28px;background:#3a7ca5;color:#fff;border-radius:100px;font-weight:700;text-decoration:none;font-size:15px;">ちはら台に相談する</a>
-      </div>
     </div>
   </div>
 </section>
@@ -1482,8 +1392,8 @@
         </div>
         <div class="cta-tel-sep"></div>
         <div class="cta-tel-col">
-          <div class="cta-facility-name">ちはら台</div>
-          <a href="tel:0436633618" class="cta-tel">0436-63-3618</a>
+          <div class="cta-facility-name" style="color:oklch(0.470 0.092 225);">ちはら台</div>
+          <a href="tel:0436633618" class="cta-tel" style="color:oklch(0.470 0.092 225);">0436-63-3618</a>
         </div>
       </div>
       <p class="cta-hours">受付時間 9:00〜18:00（年中無休）</p>
