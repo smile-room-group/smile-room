@@ -657,7 +657,7 @@ img { max-width: 100%; display: block; }
   gap: 2px;
 }
 .fb-top-name {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   font-family: "Zen Maru Gothic", sans-serif;
 }
@@ -679,6 +679,10 @@ img { max-width: 100%; display: block; }
 .faq-bot-above-bar { bottom: 72px !important; }
 /* トップページのfloating-barは縦積み */
 .floating-bar:has(.fb-top-label) {
+  flex-direction: column;
+  gap: 4px;
+}
+.floating-bar--top {
   flex-direction: column;
   gap: 4px;
 }

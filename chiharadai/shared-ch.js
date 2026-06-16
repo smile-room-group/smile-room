@@ -139,8 +139,9 @@
     // トップページでは2施設の電話番号を並列表示
     const isTop = window.location.pathname.endsWith('/smile-room/') ||
                   window.location.pathname.endsWith('/smile-room/index.html') ||
-                  (window.location.pathname === '/' && !window.location.href.includes('/oyumino') && !window.location.href.includes('/chiharadai'));
+                  window.location.pathname === '/';
     if (isTop) {
+      bar.classList.add('floating-bar--top');
       bar.innerHTML = `
   <div class="fb-top-label">施設を選んでお電話ください</div>
   <div class="fb-top-grid">
