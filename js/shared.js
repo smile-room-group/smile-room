@@ -11,7 +11,6 @@
     { href: "faq.html", label: "よくある質問" },
     { href: "news.html", label: "お知らせ" },
     { href: "contact.html", label: "お問い合わせ" },
-    { href: "brochure.html", label: "資料ダウンロード" },
   ];
 
   function currentPage() {
