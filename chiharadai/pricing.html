@@ -184,48 +184,6 @@
       <li>共有食堂・ラウンジ・共有スペース利用</li>
     </ul>
 
-    <!-- シミュレーター -->
-    <div class="simulator-wrap reveal" id="simulator">
-      <h3 class="section-title" style="font-size:22px;margin-bottom:28px;">月額費用をシミュレーションする</h3>
-      <div class="sim-steps">
-        <div>
-          <div class="sim-step-label"><span class="step-num">1</span> 基本月額</div>
-          <div class="sim-options">
-            <label class="sim-option">
-              <input type="radio" name="sim-base" value="103000" checked> 月額103,000円（食費込み）
-            </label>
-          </div>
-        </div>
-        <div>
-          <div class="sim-step-label"><span class="step-num">2</span> 介護度</div>
-          <div class="sim-options">
-            <label class="sim-option"><input type="radio" name="sim-care-level" value="0" checked> なし（自立・要支援）</label>
-            <label class="sim-option"><input type="radio" name="sim-care-level" value="1"> 要介護1（+約12,000円〜）</label>
-            <label class="sim-option"><input type="radio" name="sim-care-level" value="2"> 要介護2（+約17,000円〜）</label>
-            <label class="sim-option"><input type="radio" name="sim-care-level" value="3"> 要介護3（+約25,000円〜）</label>
-            <label class="sim-option"><input type="radio" name="sim-care-level" value="4"> 要介護4・5（+約35,000円〜）</label>
-          </div>
-        </div>
-        <div>
-          <div class="sim-step-label"><span class="step-num">3</span> 介護保険の自己負担割合</div>
-          <div class="sim-options">
-            <label class="sim-option"><input type="radio" name="sim-burden" value="1" checked> 1割（多くの方）</label>
-            <label class="sim-option"><input type="radio" name="sim-burden" value="2"> 2割</label>
-            <label class="sim-option"><input type="radio" name="sim-burden" value="3"> 3割</label>
-          </div>
-        </div>
-      </div>
-      <div class="sim-result">
-        <div class="sim-result-rows">
-          <div class="sim-result-row"><span>月額（食費込み）</span><span>103,000円</span></div>
-          <div class="sim-result-row" id="sim-row-care" style="display:none;"><span>介護サービス目安</span><span id="sim-val-care"></span></div>
-          <div class="sim-result-row total"><span>月額の目安</span><span></span></div>
-        </div>
-        <div class="sim-total-num" id="sim-total">103,000<span>円／月〜</span></div>
-        <p class="sim-note">※ 介護サービスは介護保険適用後の自己負担目安です。実際の金額はご相談ください。</p>
-        <a class="btn btn-primary" href="contact.html" style="margin-top:18px;display:inline-flex;">詳しく相談する →</a>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -343,34 +301,5 @@ function simCalcCh() {
 }
 </script>
 <script src="shared-ch.js?v=2"></script>
-<script>
-(function () {
-  var CARE_COST_1 = { 0: 0, 1: 12000, 2: 17000, 3: 25000, 4: 35000 };
-  function fmt(n) { return n.toLocaleString("ja-JP"); }
-  function calc() {
-    var careLevel = parseInt(document.querySelector('[name="sim-care-level"]:checked').value, 10);
-    var burden = parseInt(document.querySelector('[name="sim-burden"]:checked').value, 10);
-    var care = Math.round((CARE_COST_1[careLevel] || 0) * burden);
-    var total = 103000 + care;
-    var careRow = document.getElementById('sim-row-care');
-    var careVal = document.getElementById('sim-val-care');
-    if (care > 0) {
-      careRow.style.display = '';
-      careVal.textContent = '約' + fmt(care) + '円';
-    } else {
-      careRow.style.display = 'none';
-    }
-    var totalElem = document.getElementById('sim-total');
-    while (totalElem.firstChild) { totalElem.removeChild(totalElem.firstChild); }
-    totalElem.appendChild(document.createTextNode(fmt(total)));
-    var span = document.createElement('span');
-    span.textContent = '円／月〜';
-    totalElem.appendChild(span);
-  }
-  document.querySelectorAll('[name="sim-care-level"],[name="sim-burden"]')
-    .forEach(function(el) { el.addEventListener('change', calc); });
-  calc();
-})();
-</script>
 </body>
 </html>
