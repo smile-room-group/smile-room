@@ -1047,6 +1047,245 @@
 .f-station-icon { flex-shrink: 0; font-style: normal; }
 
 
+/* ===== FAMILY SECTION ===== */
+.family-section {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background: var(--bg-warm);
+}
+.family-intro {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.family-intro .sec-label { justify-content: center; }
+.family-intro .sec-title {
+  font-size: clamp(26px, 3.6vw, 42px);
+  margin-bottom: 20px;
+}
+.family-intro-text {
+  font-size: 16px;
+  color: var(--ink-soft);
+  line-height: 1.9;
+  margin-bottom: 40px;
+}
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.family-card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid var(--line-soft);
+  text-align: center;
+}
+.family-card-icon { font-size: 32px; margin-bottom: 12px; }
+.family-card h3 {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.family-card p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===== BTN ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 22px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity .15s, transform .15s;
+}
+.btn-primary {
+  background: var(--pink-600);
+  color: #fff;
+  box-shadow: 0 4px 16px oklch(0.50 0.115 14 / 0.25);
+}
+.btn-primary:hover { opacity: .88; transform: translateY(-1px); }
+.btn-blue {
+  background: oklch(0.470 0.092 225);
+  color: #fff;
+  box-shadow: 0 4px 16px oklch(0.470 0.092 225 / 0.28);
+}
+.btn-blue:hover { opacity: .88; transform: translateY(-1px); }
+
+/* ===== EMERGENCY FLOW ===== */
+.flow-section {
+  padding: clamp(64px, 9vw, 100px) 0;
+  background: var(--bg-warm);
+  border-top: 1px solid var(--line-soft);
+}
+.flow-grid {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.flow-step {
+  flex: 1;
+  background: var(--card);
+  border-radius: 22px;
+  padding: 32px 24px;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+.flow-num {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--pink-600);
+  color: #fff;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+}
+.flow-icon { font-size: 32px; margin-bottom: 12px; }
+.flow-step h3 {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.flow-step p { font-size: 14px; color: var(--ink-soft); line-height: 1.75; }
+.flow-arrow {
+  font-size: 22px;
+  color: var(--pink-300);
+  padding: 0 14px;
+  flex-shrink: 0;
+  margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .flow-grid { flex-direction: column; gap: 0; }
+  .flow-arrow { transform: rotate(90deg); padding: 4px 0; margin-bottom: 0; }
+}
+
+/* ===== COMPARISON TABLE ===== */
+.comparison-section {
+  padding: clamp(64px, 9vw, 100px) 0;
+  background: var(--bg);
+  border-top: 1px solid var(--line-soft);
+}
+.comp-table-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  box-shadow: var(--shadow-sm);
+}
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  table-layout: fixed;
+}
+.comp-table th,
+.comp-table td {
+  padding: 14px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--line-soft);
+  vertical-align: middle;
+}
+.comp-table th:first-child,
+.comp-table td:first-child {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: oklch(0.97 0.006 50);
+  width: 32%;
+  border-right: 1px solid var(--line-soft);
+}
+.comp-table thead th {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  padding: 18px 20px;
+  background: var(--card);
+}
+.comp-table thead th.th-smile {
+  background: oklch(0.55 0.130 14);
+  color: #fff;
+}
+.comp-table thead th.th-other {
+  background: oklch(0.93 0.008 50);
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+.comp-table tbody tr:last-child td { border-bottom: none; }
+.comp-table tbody tr:nth-child(even) td:not(:first-child) {
+  background: oklch(0.985 0.004 50);
+}
+.comp-smile { color: oklch(0.44 0.130 14); font-weight: 700; }
+.comp-other { color: var(--ink-mute); }
+.comp-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+.comp-badge.good { background: oklch(0.93 0.06 145 / 0.18); color: oklch(0.35 0.13 145); }
+.comp-badge.mid  { background: oklch(0.96 0.05 70 / 0.3);  color: oklch(0.50 0.10 70); }
+.comp-badge.low  { background: oklch(0.94 0.02 0 / 0.18);  color: oklch(0.50 0.02 0); }
+
+/* スマホ：テーブルをカード形式に変換 */
+@media (max-width: 600px) {
+  .comp-table-wrap { border-radius: 12px; overflow: visible; border: none; box-shadow: none; }
+  .comp-table,
+  .comp-table tbody,
+  .comp-table tr,
+  .comp-table td { display: block; width: 100%; }
+  .comp-table thead { display: none; }
+  .comp-table tbody tr {
+    background: var(--card);
+    border: 1px solid var(--line-soft);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .comp-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--line-soft);
+    text-align: right;
+    font-size: 14px;
+  }
+  .comp-table td:last-child { border-bottom: none; }
+  .comp-table td:first-child {
+    background: oklch(0.97 0.008 20 / 0.5);
+    text-align: left;
+    font-weight: 700;
+    color: var(--ink);
+    border-right: none;
+    width: 100%;
+    font-size: 13px;
+    justify-content: flex-start;
+  }
+  .comp-table td[data-label]::before {
+    content: attr(data-label);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink-mute);
+    flex-shrink: 0;
+    margin-right: 8px;
+    text-align: left;
+  }
+}
+
 /* ===== REVEAL ANIMATION ===== */
 .reveal {
   opacity: 0;
@@ -1114,16 +1353,77 @@
       <span class="badge-dot"></span>
       千葉・市原エリア &nbsp;2施設運営中
     </div>
-    <h1 class="a2">自分らしく、<br><em>安心して</em>。<br>新しい住まいの<br>選択肢。</h1>
+    <h1 class="a2">自分らしく、<em>安心して</em>。<br>新しい住まいの選択肢。</h1>
     <p class="hero-sub a3">
-      「スマイルーム」は、介護施設ではなく高齢者対応賃貸住宅です。<br>
-      自由に介護サービスを選び、自分のペースで暮らせる場所を。
+      「スマイルーム」は、介護施設ではなく高齢者対応賃貸住宅です。自由に介護サービスを選び、自分のペースで暮らせる場所を。
     </p>
+    <div class="hero-cta a4">
+      <a href="oyumino/contact.html" class="btn-primary-hero">見学予約（無料）</a>
+      <a href="oyumino/contact.html" class="btn-ghost-hero">まず資料を取り寄せる</a>
+    </div>
   </div>
 
   <div class="scroll-hint a4">
     <span>スクロール</span>
     <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ご家族の方へ -->
+<section class="family-section">
+  <div class="wrap">
+    <div class="reveal family-intro">
+      <p class="sec-label">ご家族の方へ</p>
+      <h2 class="sec-title">離れて暮らすご両親のこと、<br>心配ではありませんか？</h2>
+      <p class="family-intro-text">「施設に入れるのはかわいそう」「でも一人でいるのは心配」——そのジレンマに、スマイルームは<strong>第三の選択肢</strong>として応えます。介護施設ではなく、自分らしく暮らしながら必要なサポートだけを受けられる、新しい住まいのかたちです。</p>
+    </div>
+    <div class="reveal family-grid">
+      <div class="family-card">
+        <div class="family-card-icon">📞</div>
+        <h3>急に具合が悪くなったら？</h3>
+        <p>24時間スタッフが常駐し、緊急時はご家族へすぐに連絡します。遠方にお住まいでも、もしものときの対応をお任せいただけます。</p>
+      </div>
+      <div class="family-card">
+        <div class="family-card-icon">💰</div>
+        <h3>費用が予想以上にかかるのでは？</h3>
+        <p>食費・管理費込みで月額10.2万円〜の定額制。複雑な追加費用がなく、ご家族での費用計画が立てやすい明朗な料金体系です。</p>
+      </div>
+      <div class="family-card">
+        <div class="family-card-icon">💬</div>
+        <h3>本人が施設を嫌がるかもしれない</h3>
+        <p>スマイルームは「施設」ではなく「住まい」です。ご本人の自尊心を守りながら、ご家族で前向きに話し合える選択肢を提供します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 急変時対応フロー -->
+<section class="flow-section">
+  <div class="wrap">
+    <p class="sec-label">もしものときの安心</p>
+    <h2 class="sec-title">急変時も、スタッフが<br>すぐに動きます。</h2>
+    <div class="flow-grid">
+      <div class="flow-step reveal">
+        <div class="flow-num">1</div>
+        <div class="flow-icon">👁</div>
+        <h3>スタッフが異変を察知</h3>
+        <p>24時間スタッフが常駐し、定期的な巡回と見守りを行います。</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step reveal" data-delay="1">
+        <div class="flow-num">2</div>
+        <div class="flow-icon">🚑</div>
+        <h3>状況確認・救急対応</h3>
+        <p>必要に応じて救急要請や協力医療機関への連絡を速やかに行います。</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step reveal" data-delay="2">
+        <div class="flow-num">3</div>
+        <div class="flow-icon">📱</div>
+        <h3>ご家族へすぐに連絡</h3>
+        <p>状況をご家族へ速やかにお伝えします。遠方にお住まいでも安心です。</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1160,34 +1460,6 @@
           <h3>全室バリアフリー設計</h3>
           <p>車椅子対応の浴室・廊下・エントランス。安全で快適な住環境を整えています。</p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ご家族の方へ -->
-<section style="padding:clamp(60px,8vw,100px) 0;background:var(--bg-warm,#fdf6f0);">
-  <div class="wrap">
-    <div class="reveal" style="max-width:760px;margin:0 auto;text-align:center;">
-      <p class="sec-label" style="justify-content:center;">ご家族の方へ</p>
-      <h2 style="font-size:clamp(26px,3.6vw,42px);font-weight:700;line-height:1.4;margin-bottom:20px;">離れて暮らすご両親のこと、<br>心配ではありませんか？</h2>
-      <p style="font-size:16px;color:#666;line-height:1.9;margin-bottom:40px;">「施設に入れるのはかわいそう」「でも一人でいるのは心配」——そのジレンマに、スマイルームは<strong>第三の選択肢</strong>として応えます。介護施設ではなく、自分らしく暮らしながら必要なサポートだけを受けられる、新しい住まいのかたちです。</p>
-    </div>
-    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-bottom:40px;">
-      <div style="background:#fff;border-radius:16px;padding:28px;border:1px solid #eee;text-align:center;">
-        <div style="font-size:32px;margin-bottom:12px;">🏠</div>
-        <h3 style="font-size:16px;margin-bottom:8px;">本人の意志を尊重できる</h3>
-        <p style="font-size:14px;color:#666;line-height:1.7;margin:0;">「施設ではなく、住まいに住む」という選択。本人の自尊心を守りながら、必要なケアをそろえられます。</p>
-      </div>
-      <div style="background:#fff;border-radius:16px;padding:28px;border:1px solid #eee;text-align:center;">
-        <div style="font-size:32px;margin-bottom:12px;">👀</div>
-        <h3 style="font-size:16px;margin-bottom:8px;">24時間の見守りで安心</h3>
-        <p style="font-size:14px;color:#666;line-height:1.7;margin:0;">スタッフが常駐し、緊急時も即対応。遠くにお住まいのご家族でも、安心して日常を送っていただけます。</p>
-      </div>
-      <div style="background:#fff;border-radius:16px;padding:28px;border:1px solid #eee;text-align:center;">
-        <div style="font-size:32px;margin-bottom:12px;">💰</div>
-        <h3 style="font-size:16px;margin-bottom:8px;">費用が月額定額でわかりやすい</h3>
-        <p style="font-size:14px;color:#666;line-height:1.7;margin:0;">食費・管理費込みで月額10.2万円〜。複雑な追加費用がなく、ご家族での費用計画が立てやすい構造です。</p>
       </div>
     </div>
   </div>
@@ -1282,6 +1554,59 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison-section">
+  <div class="wrap">
+    <p class="sec-label">他の住まいとの違い</p>
+    <h2 class="sec-title">スマイルームは、<br>どう違うの？</h2>
+    <div class="comp-table-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="th-smile">スマイルーム</th>
+            <th class="th-other">特養・老健・<br>有料老人ホーム</th>
+            <th class="th-other">一人暮らし<br>（在宅介護）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>入居までの期間</td>
+            <td data-label="スマイルーム"><span class="comp-smile">最短即入居可</span></td>
+            <td data-label="一般施設"><span class="comp-other">数ヶ月〜数年待ち</span></td>
+            <td data-label="在宅介護"><span class="comp-badge good">すぐ</span></td>
+          </tr>
+          <tr>
+            <td>月額費用の目安</td>
+            <td data-label="スマイルーム"><span class="comp-smile">10.2万円〜<br><small style="font-weight:400;color:var(--ink-mute);">食費・管理費込み</small></span></td>
+            <td data-label="一般施設"><span class="comp-other">15〜40万円程度</span></td>
+            <td data-label="在宅介護"><span class="comp-other">介護度により変動</span></td>
+          </tr>
+          <tr>
+            <td>入居一時金</td>
+            <td data-label="スマイルーム"><span class="comp-smile">5万円のみ</span></td>
+            <td data-label="一般施設"><span class="comp-other">0〜数千万円</span></td>
+            <td data-label="在宅介護"><span class="comp-badge good">不要</span></td>
+          </tr>
+          <tr>
+            <td>介護サービスの選び方</td>
+            <td data-label="スマイルーム"><span class="comp-smile">今の事業者を継続可<br>自由に外部選択</span></td>
+            <td data-label="一般施設"><span class="comp-other">施設が指定<br>変更できない</span></td>
+            <td data-label="在宅介護"><span class="comp-badge good">自由に選択</span></td>
+          </tr>
+          <tr>
+            <td>生活の自由度</td>
+            <td data-label="スマイルーム"><span class="comp-smile">高い<br><small style="font-weight:400;color:var(--ink-mute);">施設のルールに縛られない</small></span></td>
+            <td data-label="一般施設"><span class="comp-other">施設のルールに従う</span></td>
+            <td data-label="在宅介護"><span class="comp-badge good">高い</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:16px;font-size:13px;color:var(--ink-mute);text-align:center;">※ 費用は目安です。施設・介護度により異なります。</p>
   </div>
 </section>
 
@@ -1384,13 +1709,13 @@
         <div class="cta-tel-col">
           <div class="cta-facility-name">おゆみ野</div>
           <a href="tel:0433107467" class="cta-tel">043-310-7467</a>
-          <a href="oyumino/contact.html" class="btn btn-primary" style="margin-top:14px;font-size:14px;padding:10px 22px;">見学予約・お問い合わせ →</a>
+          <a href="oyumino/contact.html" class="btn btn-primary" style="margin-top:14px;">見学予約・お問い合わせ →</a>
         </div>
         <div class="cta-tel-sep"></div>
         <div class="cta-tel-col">
           <div class="cta-facility-name" style="color:oklch(0.470 0.092 225);">ちはら台</div>
           <a href="tel:0436633618" class="cta-tel" style="color:oklch(0.470 0.092 225);">0436-63-3618</a>
-          <a href="chiharadai/contact.html" class="btn" style="margin-top:14px;font-size:14px;padding:10px 22px;background:oklch(0.590 0.088 225);color:white;border-radius:100px;text-decoration:none;display:inline-block;">見学予約・お問い合わせ →</a>
+          <a href="chiharadai/contact.html" class="btn btn-blue" style="margin-top:14px;">見学予約・お問い合わせ →</a>
         </div>
       </div>
       <p class="cta-hours">受付時間 9:00〜18:00（年中無休）</p>
