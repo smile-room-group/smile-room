@@ -1223,7 +1223,16 @@ details[open] .faq-chevron { transform: rotate(180deg); }
   flex-direction: column;
   gap: 8px;
 }
-.hub-icon { font-size: 28px; line-height: 1; }
+.hub-icon {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--hub-bg);
+  border: 1.5px solid var(--hub-border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--hub-color);
+  font-size: 22px; line-height: 1;
+  flex-shrink: 0;
+}
 .hub-badge {
   font-size: 10px;
   font-weight: 700;
