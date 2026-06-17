@@ -11,9 +11,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css">
 <style>
+:root {
+  --pink-50:  oklch(0.965 0.015 225);
+  --pink-100: oklch(0.930 0.028 225);
+  --pink-200: oklch(0.870 0.048 225);
+  --pink-300: oklch(0.790 0.062 225);
+  --pink-400: oklch(0.700 0.076 225);
+  --pink-500: oklch(0.590 0.088 225);
+  --pink-600: oklch(0.470 0.092 225);
+}
 .brochure-hero {
   padding: clamp(60px,8vw,100px) 0 clamp(48px,7vw,80px);
-  background: radial-gradient(60% 70% at 80% 10%, oklch(0.94 0.05 25), transparent 70%), var(--bg);
+  background: radial-gradient(60% 70% at 80% 10%, oklch(0.94 0.04 225), transparent 70%), var(--bg);
 }
 .brochure-card {
   background: var(--card);
@@ -66,7 +75,7 @@
   cursor: pointer;
   width: 100%;
   margin-top: 8px;
-  box-shadow: 0 6px 20px oklch(0.50 0.115 14 / 0.3);
+  box-shadow: 0 6px 20px oklch(0.470 0.092 225 / 0.3);
   transition: opacity .2s, transform .2s;
 }
 .form-submit:hover { opacity: .88; transform: translateY(-2px); }
