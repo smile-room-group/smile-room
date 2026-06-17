@@ -226,6 +226,22 @@
           <input type="email" name="email" placeholder="example@email.com">
         </div>
         <div class="form-row">
+          <label>ご連絡方法 <span class="opt">任意</span></label>
+          <div class="radios">
+            <label class="radio checked"><input type="radio" name="contact_method" value="tel" checked> 電話</label>
+            <label class="radio"><input type="radio" name="contact_method" value="email"> メール</label>
+            <label class="radio"><input type="radio" name="contact_method" value="line"> LINE</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <label>ご希望の時間帯 <span class="opt">任意</span></label>
+          <div class="radios">
+            <label class="radio checked"><input type="radio" name="contact_time" value="am" checked> 午前（9〜12時）</label>
+            <label class="radio"><input type="radio" name="contact_time" value="pm"> 午後（13〜17時）</label>
+            <label class="radio"><input type="radio" name="contact_time" value="eve"> 夕方（17〜19時）</label>
+          </div>
+        </div>
+        <div class="form-row">
           <label>ご希望の見学日 <span class="opt">任意</span></label>
           <input type="date" name="date">
         </div>
