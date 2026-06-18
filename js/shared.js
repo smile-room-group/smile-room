@@ -211,7 +211,7 @@
       "@type": "ListItem",
       "position": i + 1,
       "name": c.label,
-      ...(c.href ? { "item": location.origin + "/" + c.href } : {})
+      ...(c.href ? { "item": new URL(c.href, location.href).href } : {})
     }));
     const ld = document.createElement("script");
     ld.type = "application/ld+json";
