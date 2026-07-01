@@ -182,6 +182,21 @@
     if (header && header.nextSibling) {
       header.parentNode.insertBefore(nav, header.nextSibling);
     }
+
+    const ldItems = crumbs.map((c, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": c.label,
+      ...(c.href ? { "item": new URL(c.href, location.href).href } : {})
+    }));
+    const ld = document.createElement("script");
+    ld.type = "application/ld+json";
+    ld.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": ldItems
+    });
+    document.head.appendChild(ld);
   }
 
   /* ===== anchor menu ===== */
