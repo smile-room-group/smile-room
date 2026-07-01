@@ -2,6 +2,9 @@
 .claude/
 .superpowers/
 
+# 内部企画・戦略資料（リポジトリPUBLIC化のため除外）
+docs/
+
 # ビルド生成物（再生成可能・サイズ大）
 *.pdf
 *.docx
