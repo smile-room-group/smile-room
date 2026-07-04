@@ -136,26 +136,6 @@
   見学予約（無料）
 </a>
 `;
-    // トップページでは2施設の電話番号を並列表示
-    const isTop = window.location.pathname.endsWith('/smile-room/') ||
-                  window.location.pathname.endsWith('/smile-room/index.html') ||
-                  window.location.pathname === '/';
-    if (isTop) {
-      bar.classList.add('floating-bar--top');
-      bar.innerHTML = `
-  <div class="fb-top-label">施設を選んでお電話ください</div>
-  <div class="fb-top-grid">
-    <a href="tel:0433107467" class="fb-top-item fb-top-oyumino" aria-label="おゆみ野に電話">
-      <span class="fb-top-name">おゆみ野</span>
-      <span class="fb-top-tel">043-310-7467</span>
-    </a>
-    <a href="tel:0436633618" class="fb-top-item fb-top-chiharadai" aria-label="ちはら台に電話">
-      <span class="fb-top-name">ちはら台</span>
-      <span class="fb-top-tel">0436-63-3618</span>
-    </a>
-  </div>
-  `;
-    }
     document.body.appendChild(bar);
   }
 
