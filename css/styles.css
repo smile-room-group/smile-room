@@ -1375,3 +1375,27 @@ details[open] .faq-chevron { transform: rotate(180deg); }
   background: var(--pink-600);
   color: white;
 }
+
+/* =================== 確認用コメント =================== */
+.review-note {
+  background: white;
+  border: 2px dashed var(--pink-400);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-top: 14px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.6;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.review-note p {
+  margin: 0;
+  flex: 1;
+}
+.review-note-icon {
+  flex-shrink: 0;
+  font-size: 18px;
+  line-height: 1.4;
+}
