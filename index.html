@@ -1187,118 +1187,81 @@
   .flow-arrow { transform: rotate(90deg); padding: 4px 0; margin-bottom: 0; }
 }
 
-/* ===== COMPARISON TABLE ===== */
+/* ===== COMPARISON CARDS ===== */
 .comparison-section {
   padding: clamp(64px, 9vw, 100px) 0;
   background: var(--bg);
   border-top: 1px solid var(--line-soft);
 }
-.comp-table-wrap {
-  border-radius: 16px;
-  overflow: hidden;
+.comp-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+.comp-card {
+  background: var(--card);
   border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  padding: 22px 22px;
   box-shadow: var(--shadow-sm);
 }
-.comp-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 15px;
-  table-layout: fixed;
+.comp-card.featured {
+  background: linear-gradient(165deg, oklch(0.99 0.006 50), var(--pink-50));
+  border: 2px solid var(--pink-300);
+  box-shadow: var(--shadow);
 }
-.comp-table th,
-.comp-table td {
-  padding: 14px 20px;
+.comp-card h3 {
+  font-size: 16px;
   text-align: center;
-  border-bottom: 1px solid var(--line-soft);
-  vertical-align: middle;
+  margin-bottom: 3px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.comp-table th:first-child,
-.comp-table td:first-child {
-  text-align: left;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--ink-soft);
-  background: oklch(0.97 0.006 50);
-  width: 32%;
-  border-right: 1px solid var(--line-soft);
+.comp-card.featured h3 { color: var(--pink-600); font-size: 18px; }
+.comp-card-tagline {
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--ink-mute);
+  margin-bottom: 14px;
 }
-.comp-table thead th {
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-weight: 900;
-  font-size: 15px;
-  padding: 18px 20px;
-  background: var(--card);
+.comp-card dl { margin: 0; }
+.comp-row {
+  padding: 8px 0;
+  border-top: 1px solid var(--line-soft);
 }
-.comp-table thead th.th-smile {
-  background: oklch(0.55 0.130 14);
-  color: #fff;
-}
-.comp-table thead th.th-other {
-  background: oklch(0.93 0.008 50);
-  color: var(--ink-soft);
-  font-size: 13px;
-}
-.comp-table tbody tr:last-child td { border-bottom: none; }
-.comp-table tbody tr:nth-child(even) td:not(:first-child) {
-  background: oklch(0.985 0.004 50);
-}
-.comp-smile { color: oklch(0.44 0.130 14); font-weight: 700; }
-.comp-other { color: var(--ink-mute); }
-.comp-badge {
-  display: inline-block;
+.comp-row:first-of-type { border-top: none; }
+.comp-row dt {
   font-size: 11px;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 100px;
+  color: var(--ink-mute);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 2px;
 }
-.comp-badge.good { background: oklch(0.93 0.06 145 / 0.18); color: oklch(0.35 0.13 145); }
-.comp-badge.mid  { background: oklch(0.96 0.05 70 / 0.3);  color: oklch(0.50 0.10 70); }
-.comp-badge.low  { background: oklch(0.94 0.02 0 / 0.18);  color: oklch(0.50 0.02 0); }
+.comp-row dd {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: left;
+  line-height: 1.45;
+}
+.comp-card.featured .comp-row dd { color: var(--pink-600); }
+.comp-row dd small {
+  display: block;
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--ink-mute);
+  margin-top: 1px;
+  min-height: 1.4em;
+}
 
-/* スマホ：テーブルをカード形式に変換 */
-@media (max-width: 600px) {
-  .comp-table-wrap { border-radius: 12px; overflow: visible; border: none; box-shadow: none; }
-  .comp-table,
-  .comp-table tbody,
-  .comp-table tr,
-  .comp-table td { display: block; width: 100%; }
-  .comp-table thead { display: none; }
-  .comp-table tbody tr {
-    background: var(--card);
-    border: 1px solid var(--line-soft);
-    border-radius: 14px;
-    margin-bottom: 12px;
-    overflow: hidden;
-  }
-  .comp-table td {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 11px 16px;
-    border-bottom: 1px solid var(--line-soft);
-    text-align: right;
-    font-size: 14px;
-  }
-  .comp-table td:last-child { border-bottom: none; }
-  .comp-table td:first-child {
-    background: oklch(0.97 0.008 20 / 0.5);
-    text-align: left;
-    font-weight: 700;
-    color: var(--ink);
-    border-right: none;
-    width: 100%;
-    font-size: 13px;
-    justify-content: flex-start;
-  }
-  .comp-table td[data-label]::before {
-    content: attr(data-label);
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--ink-mute);
-    flex-shrink: 0;
-    margin-right: 8px;
-    text-align: left;
-  }
+/* スマホ：1カラムに積み上げ、スマイルームを先頭に */
+@media (max-width: 780px) {
+  .comp-cards { grid-template-columns: 1fr; }
+  .comp-card.featured { transform: none; order: -1; }
 }
 
 /* ===== REVEAL ANIMATION ===== */
@@ -1494,7 +1457,7 @@
             <li>介護サービスは外部から自由選択・今の事業者を継続可</li>
             <li>24時間見守りサポート・入居一時金50,000円</li>
           </ul>
-          <a href="oyumino/" class="f-btn pink">施設詳細 →</a>
+          <a href="oyumino/index.html" class="f-btn pink">施設詳細 →</a>
           <a href="oyumino/contact.html" class="f-btn pink" style="margin-top:10px;">ご相談・見学予約 →</a>
         </div>
       </div>
@@ -1534,7 +1497,7 @@
             <li>介護サービスは外部から自由選択・自立〜要介護5対応</li>
             <li>24時間スタッフ常駐・入居一時金50,000円</li>
           </ul>
-          <a href="chiharadai/" class="f-btn blue">施設詳細 →</a>
+          <a href="chiharadai/index.html" class="f-btn blue">施設詳細 →</a>
           <a href="chiharadai/contact.html" class="f-btn blue" style="margin-top:10px;">ご相談・見学予約 →</a>
         </div>
       </div>
@@ -1548,49 +1511,42 @@
   <div class="wrap">
     <p class="sec-label">他の住まいとの違い</p>
     <h2 class="sec-title">スマイルームは、<br>どう違うの？</h2>
-    <div class="comp-table-wrap">
-      <table class="comp-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th class="th-smile">スマイルーム</th>
-            <th class="th-other">特養・老健・<br>有料老人ホーム</th>
-            <th class="th-other">サービス付き<br>高齢者住宅（サ高住）</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>入居までの期間</td>
-            <td data-label="スマイルーム"><span class="comp-smile">最短即入居可</span></td>
-            <td data-label="一般施設"><span class="comp-other">数ヶ月〜数年待ち</span></td>
-            <td data-label="サ高住"><span class="comp-badge mid">比較的早い<br><small>空室次第</small></span></td>
-          </tr>
-          <tr>
-            <td>月額費用の目安</td>
-            <td data-label="スマイルーム"><span class="comp-smile">10.3万円〜<br><small style="font-weight:400;color:var(--ink-mute);">食費・管理費・共益費込み</small></span></td>
-            <td data-label="一般施設"><span class="comp-other">8〜35万円程度<br><small>施設の種類により差が大きい</small></span></td>
-            <td data-label="サ高住"><span class="comp-other">12〜25万円程度<br><small>施設により差が大きい</small></span></td>
-          </tr>
-          <tr>
-            <td>入居一時金</td>
-            <td data-label="スマイルーム"><span class="comp-smile">5万円のみ</span></td>
-            <td data-label="一般施設"><span class="comp-other">0〜数百万円<br><small>介護付きは平均約100〜500万円</small></span></td>
-            <td data-label="サ高住"><span class="comp-other">0〜数十万円程度<br><small>敷金のみのケースが多い</small></span></td>
-          </tr>
-          <tr>
-            <td>介護サービスの選び方</td>
-            <td data-label="スマイルーム"><span class="comp-smile">今の事業者を継続可<br>自由に外部選択</span></td>
-            <td data-label="一般施設"><span class="comp-other">施設が指定<br>変更できない</span></td>
-            <td data-label="サ高住"><span class="comp-badge mid">原則自由<br><small>特定施設型は除く</small></span></td>
-          </tr>
-          <tr>
-            <td>生活の自由度</td>
-            <td data-label="スマイルーム"><span class="comp-smile">高い<br><small style="font-weight:400;color:var(--ink-mute);">施設のルールに縛られない</small></span></td>
-            <td data-label="一般施設"><span class="comp-other">施設のルールに従う</span></td>
-            <td data-label="サ高住"><span class="comp-badge mid">高い<br><small>自室生活が基本</small></span></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="comp-cards">
+      <div class="comp-card featured">
+        <h3>スマイルーム</h3>
+        <p class="comp-card-tagline">自由と安心を両立する新しい住まい方</p>
+        <dl>
+          <div class="comp-row"><dt>入居までの期間</dt><dd>最短即入居可<small>&nbsp;</small></dd></div>
+          <div class="comp-row"><dt>月額費用の目安</dt><dd>10.3万円〜<small>食費・管理費・共益費込み</small></dd></div>
+          <div class="comp-row"><dt>入居一時金</dt><dd>5万円のみ<small>&nbsp;</small></dd></div>
+          <div class="comp-row"><dt>介護サービス</dt><dd>継続・外部選択自由<small>&nbsp;</small></dd></div>
+          <div class="comp-row"><dt>生活の自由度</dt><dd>高い<small>施設のルールに縛られない</small></dd></div>
+        </dl>
+      </div>
+
+      <div class="comp-card">
+        <h3>特養・老健・<br>有料老人ホーム</h3>
+        <p class="comp-card-tagline">従来型の介護施設</p>
+        <dl>
+          <div class="comp-row"><dt>入居までの期間</dt><dd>数ヶ月〜数年待ち<small>&nbsp;</small></dd></div>
+          <div class="comp-row"><dt>月額費用の目安</dt><dd>8〜35万円程度<small>施設の種類により差が大きい</small></dd></div>
+          <div class="comp-row"><dt>入居一時金</dt><dd>0〜数百万円<small>介護付きは平均約100〜500万円</small></dd></div>
+          <div class="comp-row"><dt>介護サービス</dt><dd>施設が指定<small>変更できない</small></dd></div>
+          <div class="comp-row"><dt>生活の自由度</dt><dd>施設のルールに従う<small>&nbsp;</small></dd></div>
+        </dl>
+      </div>
+
+      <div class="comp-card">
+        <h3>サービス付き<br>高齢者住宅（サ高住）</h3>
+        <p class="comp-card-tagline">見守り付きの賃貸住宅</p>
+        <dl>
+          <div class="comp-row"><dt>入居までの期間</dt><dd>比較的早い<small>空室次第</small></dd></div>
+          <div class="comp-row"><dt>月額費用の目安</dt><dd>12〜25万円程度<small>施設により差が大きい</small></dd></div>
+          <div class="comp-row"><dt>入居一時金</dt><dd>0〜数十万円程度<small>敷金のみのケースが多い</small></dd></div>
+          <div class="comp-row"><dt>介護サービス</dt><dd>原則自由<small>特定施設型は除く</small></dd></div>
+          <div class="comp-row"><dt>生活の自由度</dt><dd>高い<small>自室生活が基本</small></dd></div>
+        </dl>
+      </div>
     </div>
     <p style="margin-top:16px;font-size:13px;color:var(--ink-mute);text-align:center;">※ 費用は目安です。施設・介護度により異なります。</p>
   </div>
