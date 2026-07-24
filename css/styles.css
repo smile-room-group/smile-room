@@ -783,6 +783,16 @@ img { max-width: 100%; display: block; }
   border-radius: 6px;
   border: 1px dashed var(--pink-200);
 }
+.review-note {
+  font-size: 13px;
+  color: var(--ink-mute);
+  margin: 8px 0;
+  padding: 8px 12px;
+  background: var(--pink-50);
+  border-radius: 6px;
+  border: 1px dashed var(--pink-200);
+}
+.review-note-icon { margin-right: 6px; }
 
 /* ============= よくある心配 ============= */
 .worries-grid {
