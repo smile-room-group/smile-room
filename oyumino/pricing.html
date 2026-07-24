@@ -171,6 +171,7 @@
       </div>
       <span class="tag" style="font-size:14px;padding:8px 14px;">家賃・管理費・共益費・食費すべて込み</span>
     </div>
+    <div class="review-note"><span class="review-note-icon">⚠</span><p>月額表記の基準が施設間で不統一（家賃ベース表記と食費込み総額表記が混在）。両施設で表記の基準を統一したい（Excel No.21）</p></div>
   </div>
 </section>
 
@@ -181,12 +182,14 @@
     <div class="plan-detail">
       <div>
         <div class="img-placeholder">[ Aタイプ 居室写真<br>4:3 ]</div>
+        <div class="review-note"><span class="review-note-icon">📷</span><p>※ 実写画像 未挿入（プレースホルダー）</p></div>
       </div>
       <div>
         <span class="tag">Aタイプ・スタンダード</span>
         <h3 class="mt-2">スタンダード個室</h3>
         <div class="price-hero-num" style="font-size:54px;margin:8px 0;">106,800<span class="yen">円</span><span class="from">/月〜</span></div>
         <p style="color:var(--ink-soft);margin-bottom:18px;">家賃・管理費・共益費・食費を含んだ定額制（11.18㎡〜）。食事は月ごとに選択できます。プライベートを保ちながら、共有スペースもご利用いただけます。</p>
+        <div class="review-note"><span class="review-note-icon">⚠</span><p>Aタイプ居室面積が「約9畳」（facilities.html）と「11.18㎡〜」（畳数換算では約6.8畳相当）で不整合。どちらか誤りなので確認のうえ修正が必要（Excel No.4）</p></div>
         <ul class="plan-list">
           <li>個室（11.18㎡〜）・エアコン完備</li>
           <li>専用トイレ・洗面台</li>
@@ -200,6 +203,7 @@
     <div class="plan-detail featured">
       <div>
         <div class="img-placeholder">[ Bタイプ 居室写真<br>4:3 ]</div>
+        <div class="review-note"><span class="review-note-icon">📷</span><p>※ 実写画像 未挿入（プレースホルダー）</p></div>
       </div>
       <div>
         <span class="tag" style="background:var(--pink-500);color:white;">Bタイプ・人気プラン</span>
@@ -238,6 +242,11 @@
           <th>食費</th>
           <td><span class="amt">15,000円</span> <span class="note">/ 月（月ごとに変動）</span></td>
         </tr>
+        <tr>
+          <td colspan="2">
+            <div class="review-note"><span class="review-note-icon">⚠</span><p>食費の金額が「月額内訳15,000円」「オプション+45,000円（1日3食）」「シミュレーター上は食事なしで-43,000円」の3種類存在。至急、正しい金額に統一が必要（Excel No.1）</p></div>
+          </td>
+        </tr>
       </tbody>
       <tfoot>
         <tr>
@@ -247,6 +256,7 @@
       </tfoot>
     </table>
     <p class="mt-3" style="font-size:13.5px;color:var(--ink-mute);">※ 入居時に入居一時金50,000円（一回のみ）が必要です。礼金・更新料はかかりません。</p>
+    <div class="review-note"><span class="review-note-icon">⚠</span><p>初期費用の説明が資料ごとに異なる。本ページは「入居一時金5万円のみ・敷金礼金更新料なし」と明記するが、flow.htmlには「敷金：家賃2ヶ月分」、flyer.htmlには「火災保険1万円/2年」が別途登場。入居時費用の一覧を確定させる必要あり（Excel No.6）</p></div>
 
   </div>
 </section>
@@ -273,6 +283,7 @@
         <div class="price">+8,000円 / 月</div>
         <p>週2回の洗濯代行サービス。シーツ・タオル類も対応します。</p>
       </div>
+      <div class="review-note"><span class="review-note-icon">⚠</span><p>オプション料金：洗濯サービス+8,000円/月・居室清掃+6,000円/月・通院サポートは金額未記載で「要相談」。各オプションの金額・提供実態を確認したい。特に通院サポートは金額が空欄のまま公開されている（Excel No.22）</p></div>
       <div class="option">
         <h4>居室清掃</h4>
         <div class="price">+6,000円 / 月</div>
@@ -355,6 +366,8 @@
           <button class="sim-opt" data-val="3" onclick="simSelect(this,'sim-burden')">3割</button>
         </div>
       </div>
+
+      <div class="review-note"><span class="review-note-icon">⚠</span><p>要介護度別の自己負担目安額（要介護1: 約12,000円〜要介護5: 約35,000円）を提示。施設独自の実績値か一般的な介護保険早見表の転記か根拠が不明。誤解を招く表示でないか確認したい（Excel No.23）</p></div>
 
       <div class="sim-result">
         <div class="sim-result-label">概算月額（税込）</div>
