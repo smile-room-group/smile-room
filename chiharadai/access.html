@@ -167,6 +167,7 @@
           Google マップで開く
         </a>
         <div class="mt-6 reveal">
+          <div class="review-note"><span class="review-note-icon">⚠</span><p>地図に埋め込まれている座標（緯度35.541296, 経度140.198946）が実際の施設所在地と一致するか確認が必要（Excel No.33）</p></div>
           <div class="map-lazy-wrap" id="gmap-wrap" role="button" tabindex="0" aria-label="クリックしてGoogleマップを表示">
             <div class="map-lazy-placeholder" id="gmap-placeholder">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -227,7 +228,7 @@
   function loadMap() {
     placeholder.style.display = "none";
     var iframe = document.createElement("iframe");
-    iframe.src = "https://maps.google.com/maps?q=35.541296,140.198946&z=16&output=embed&hl=ja"; // 地図座標が施設所在地と一致するか確認が必要（Excel No.33）
+    iframe.src = "https://maps.google.com/maps?q=35.541296,140.198946&z=16&output=embed&hl=ja";
     iframe.allowFullscreen = true;
     iframe.loading = "lazy";
     iframe.title = "スマイルームちはら台の地図";
