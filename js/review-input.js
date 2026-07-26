@@ -1,7 +1,7 @@
 /* サイト確認用コメント入力機能（一時的機能・撤去予定）
    設計書: docs/superpowers/specs/2026-07-27-review-comment-input-design.md */
 (function () {
-  const GAS_URL = ''; // Task 8でGASデプロイ後のWebアプリURLを設定する
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbyypmodCQiZm-Xo4wnP4YsWQ-ksNPamETWT6_KRTPaV5mQJSM5ZMnuUA8HKyt-K4F2M/exec';
   const AUTHORS = ['代表', '事務'];
 
   function currentPage() {
