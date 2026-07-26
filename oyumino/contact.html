@@ -254,7 +254,7 @@
             <option>要介護3〜5</option>
             <option>その他・わからない</option>
           </select>
-          <div class="review-note"><span class="review-note-icon">⚠</span><p>入居対象の要介護度が「要介護1〜4のみ」（faq.html）／「自立〜要介護5まで対応」（index.html）／本フォームの選択肢に「お元気」「要支援1〜2」ありで不一致。入居対象範囲を確定し全ページ統一する必要あり（Excel No.2）</p></div>
+          <div class="review-note" data-review-id="oyumino-contact-01"><span class="review-note-icon">⚠</span><p>入居対象の要介護度が「要介護1〜4のみ」（faq.html）／「自立〜要介護5まで対応」（index.html）／本フォームの選択肢に「お元気」「要支援1〜2」ありで不一致。入居対象範囲を確定し全ページ統一する必要あり（Excel No.2）</p></div>
         </div>
         <div class="form-row">
           <label>ご質問・ご要望 <span class="opt">任意</span></label>
@@ -270,8 +270,10 @@
   </div>
 </section>
 
+<div class="review-note review-note-freeform" data-review-id="oyumino-contact-free"><span class="review-note-icon">📝</span><p>その他、気づいたことがあればこちらにご記入ください。</p></div>
 <div data-site-footer></div>
 <script src="../js/shared.js"></script>
+<script src="../js/review-input.js"></script>
 <script>
 // Radio styling
 document.querySelectorAll(".radios").forEach(group => {
