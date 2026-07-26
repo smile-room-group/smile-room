@@ -1376,6 +1376,64 @@ details[open] .faq-chevron { transform: rotate(180deg); }
   color: white;
 }
 
+/* =================== コメント一覧・入力フォーム =================== */
+.review-note-freeform { border-color: var(--pink-300); }
+.review-comments {
+  margin: 4px 0 18px;
+  padding: 12px 14px;
+  background: var(--pink-50);
+  border: 1px solid var(--pink-200);
+  border-radius: 8px;
+  font-size: 13px;
+}
+.review-comment-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
+.review-comment-item {
+  background: white;
+  border-radius: 6px;
+  padding: 8px 10px;
+  border: 1px solid var(--pink-200);
+}
+.review-comment-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--ink-mute);
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.review-comment-author { font-weight: 700; color: var(--pink-600); }
+.review-comment-body { margin: 0; color: var(--ink-soft); white-space: pre-wrap; }
+.review-comment-empty,
+.review-comment-loading { margin: 0; color: var(--ink-mute); font-size: 12px; }
+.review-comment-error-inline { margin: 0; color: var(--pink-600); font-size: 12px; }
+.review-comment-form { display: flex; flex-direction: column; gap: 8px; }
+.review-comment-select,
+.review-comment-textarea {
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid var(--pink-200);
+  border-radius: 6px;
+  background: white;
+  color: var(--ink-soft);
+}
+.review-comment-textarea { resize: vertical; min-height: 60px; }
+.review-comment-submit {
+  align-self: flex-start;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  background: var(--pink-500);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+.review-comment-submit:hover { background: var(--pink-600); }
+.review-comment-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.review-comment-error { margin: 0; color: var(--pink-600); font-size: 12px; }
+@media (max-width: 600px) {
+  .review-comments { padding: 10px; }
+}
+
 /* =================== 確認用コメント =================== */
 .review-note {
   background: white;
