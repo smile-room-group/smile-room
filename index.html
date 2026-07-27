@@ -71,6 +71,8 @@
   --chiha-300: oklch(0.790 0.070 225);
   --chiha-500: oklch(0.600 0.105 225);
   --chiha-600: oklch(0.500 0.115 225);
+  --stats-bg: oklch(0.94 0.012 60);
+  --stats-line: oklch(0.88 0.014 60);
 }
 body.page-top {
   --bg-warm: oklch(0.975 0.004 60);
@@ -864,9 +866,9 @@ body.page-top {
 
 /* ===== STATS ===== */
 .stats {
-  background: oklch(0.94 0.012 60);
-  border-top: 1px solid oklch(0.88 0.014 60);
-  border-bottom: 1px solid oklch(0.88 0.014 60);
+  background: var(--stats-bg);
+  border-top: 1px solid var(--stats-line);
+  border-bottom: 1px solid var(--stats-line);
   padding: clamp(52px, 8vw, 80px) 0;
 }
 .stats-grid {
@@ -876,7 +878,7 @@ body.page-top {
 .stat-item {
   text-align: center;
   padding: 24px 16px;
-  border-right: 1px solid oklch(0.88 0.014 60);
+  border-right: 1px solid var(--stats-line);
   color: var(--ink);
 }
 .stat-item:last-child { border-right: none; }
@@ -1290,7 +1292,7 @@ body.page-top {
   .f-grid, .feat-grid { grid-template-columns: minmax(0, 1fr); }
   .f-name { font-size: 20px; white-space: nowrap; }
   .stats-grid { grid-template-columns: minmax(0, 1fr); }
-  .stat-item { border-right: none; border-bottom: 1px solid oklch(0.88 0.014 60); }
+  .stat-item { border-right: none; border-bottom: 1px solid var(--stats-line); }
   .stat-item:last-child { border-bottom: none; }
   .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .cta-card { padding: 36px 28px; }
