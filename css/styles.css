@@ -1430,6 +1430,7 @@ details[open] .faq-chevron { transform: rotate(180deg); }
 .review-comment-submit:hover { background: var(--pink-600); }
 .review-comment-submit:disabled { opacity: 0.6; cursor: not-allowed; }
 .review-comment-error { margin: 0; color: var(--pink-600); font-size: 12px; }
+.review-comment-success { margin: 0; color: var(--leaf); font-size: 12px; font-weight: 700; }
 @media (max-width: 600px) {
   .review-comments { padding: 10px; }
 }

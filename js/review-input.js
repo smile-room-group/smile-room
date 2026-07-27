@@ -51,6 +51,7 @@
         <textarea class="review-comment-textarea" data-role="comment" placeholder="コメントを入力してください" required></textarea>
         <button type="submit" class="review-comment-submit">送信</button>
         <p class="review-comment-error" data-role="error" hidden></p>
+        <p class="review-comment-success" data-role="success" hidden>✓ 送信しました</p>
       </form>
     `;
     noteEl.insertAdjacentElement('afterend', wrap);
@@ -61,6 +62,15 @@
     const errorEl = block.querySelector('[data-role="error"]');
     errorEl.hidden = !message;
     errorEl.textContent = message || '';
+  }
+
+  function flashSuccess(block) {
+    const successEl = block.querySelector('[data-role="success"]');
+    successEl.hidden = false;
+    clearTimeout(successEl._hideTimer);
+    successEl._hideTimer = setTimeout(function () {
+      successEl.hidden = true;
+    }, 2500);
   }
 
   async function fetchAllComments() {
@@ -117,6 +127,7 @@
         commentEl.value = '';
         authorEl.value = '';
         await refreshBlock(block, reviewId);
+        flashSuccess(block);
         if (onSubmitted) onSubmitted();
       } catch (err) {
         setError(block, '送信に失敗しました。もう一度お試しください。');
