@@ -79,7 +79,7 @@
 .step:last-child::after { display: none; }
 
 @media (max-width: 700px) {
-  .step { grid-template-columns: 1fr; padding: 24px; }
+  .step { grid-template-columns: minmax(0, 1fr); padding: 24px; }
   .step-num { flex-direction: row; }
   .step-num .ring { width: 56px; height: 56px; font-size: 24px; }
   .step::after { left: 30px; }
@@ -87,10 +87,10 @@
 
 .docs-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
-@media (max-width: 700px) { .docs-list { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .docs-list { grid-template-columns: minmax(0, 1fr); } }
 .doc {
   display: flex; gap: 12px; align-items: center;
   padding: 16px 18px;

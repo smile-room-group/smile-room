@@ -13,11 +13,11 @@
 <style>
 .contact-options {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
   margin-bottom: 60px;
 }
-@media (max-width: 800px) { .contact-options { grid-template-columns: 1fr; } }
+@media (max-width: 800px) { .contact-options { grid-template-columns: minmax(0, 1fr); } }
 .opt-card {
   background: var(--card);
   border-radius: var(--radius-lg);
@@ -127,7 +127,7 @@
 }
 
 @media (max-width: 700px) {
-  .form-row { grid-template-columns: 1fr; gap: 8px; }
+  .form-row { grid-template-columns: minmax(0, 1fr); gap: 8px; }
   .form-row label { padding-top: 0; }
   .form-card { padding: 26px; }
 }
