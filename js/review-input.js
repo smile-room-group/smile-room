@@ -2,7 +2,6 @@
    設計書: docs/superpowers/specs/2026-07-27-review-comment-input-design.md */
 (function () {
   const GAS_URL = 'https://script.google.com/macros/s/AKfycbyypmodCQiZm-Xo4wnP4YsWQ-ksNPamETWT6_KRTPaV5mQJSM5ZMnuUA8HKyt-K4F2M/exec';
-  const AUTHORS = ['代表', '事務'];
 
   function currentPage() {
     return location.pathname;
@@ -47,10 +46,8 @@
     wrap.innerHTML = `
       <div class="review-comment-list" data-role="list"><p class="review-comment-loading">読み込み中...</p></div>
       <form class="review-comment-form" data-role="form">
-        <select class="review-comment-select" data-role="author" required>
-          <option value="">入力者を選択</option>
-          ${AUTHORS.map(a => `<option value="${a}">${a}</option>`).join('')}
-        </select>
+        <input type="text" class="review-comment-input-author" data-role="author" placeholder="お名前" required>
+
         <textarea class="review-comment-textarea" data-role="comment" placeholder="コメントを入力してください" required></textarea>
         <button type="submit" class="review-comment-submit">送信</button>
         <p class="review-comment-error" data-role="error" hidden></p>
@@ -101,7 +98,7 @@
       const author = authorEl.value;
       const comment = commentEl.value.trim();
       if (!author || !comment) {
-        setError(block, '入力者の選択とコメントの入力は必須です。');
+        setError(block, '入力者名とコメントの入力は必須です。');
         return;
       }
       setError(block, '');

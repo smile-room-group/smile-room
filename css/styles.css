@@ -1407,7 +1407,7 @@ details[open] .faq-chevron { transform: rotate(180deg); }
 .review-comment-loading { margin: 0; color: var(--ink-mute); font-size: 12px; }
 .review-comment-error-inline { margin: 0; color: var(--pink-600); font-size: 12px; }
 .review-comment-form { display: flex; flex-direction: column; gap: 8px; }
-.review-comment-select,
+.review-comment-input-author,
 .review-comment-textarea {
   font: inherit;
   padding: 8px 10px;
