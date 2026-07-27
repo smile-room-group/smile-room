@@ -37,8 +37,8 @@
 .flow-body .flow-time { font-family: "JetBrains Mono"; font-size: 12.5px; color: var(--ink-mute); margin-bottom: 6px; }
 .checklist-card { background: var(--card); border: 1px solid var(--line-soft); border-radius: var(--radius-lg); padding: 30px; }
 .checklist-card h3 { font-size: 18px; margin-bottom: 18px; }
-.checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
-@media (max-width: 600px) { .checklist-grid { grid-template-columns: 1fr; } }
+.checklist-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px 24px; }
+@media (max-width: 600px) { .checklist-grid { grid-template-columns: minmax(0, 1fr); } }
 .cl-item { display: flex; gap: 8px; font-size: 13.5px; color: var(--ink-soft); align-items: flex-start; }
 .cl-item::before { content: "□"; color: var(--pink-400); font-weight: 700; flex-shrink: 0; }
 </style>

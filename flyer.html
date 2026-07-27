@@ -236,7 +236,7 @@
     }
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.8mm;
     }
     .feature-card {
@@ -267,7 +267,7 @@
     ══════════════════════════════════════ */
     .two-col {
       display: grid;
-      grid-template-columns: 1fr 1fr;   /* 均等2列 */
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);   /* 均等2列 */
       padding: 2.5mm 8mm;
       gap: 4mm;
       align-items: stretch;             /* 両列を同じ高さに */
@@ -514,7 +514,7 @@
     }
     .family-msg-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 2.5mm;
     }
     .family-msg-card {

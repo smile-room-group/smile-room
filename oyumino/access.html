@@ -13,11 +13,11 @@
 <style>
 .poi-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   margin-top: 30px;
 }
-@media (max-width: 800px) { .poi-grid { grid-template-columns: 1fr; } }
+@media (max-width: 800px) { .poi-grid { grid-template-columns: minmax(0, 1fr); } }
 .poi {
   background: var(--card);
   border: 1px solid var(--line-soft);
@@ -92,7 +92,7 @@
 .addr-row dd { margin: 0; font-size: 15px; }
 .addr-row dd strong { font-family: "Zen Maru Gothic"; font-size: 22px; }
 @media (max-width: 700px) {
-  .addr-row { grid-template-columns: 1fr; gap: 4px; padding: 12px 0; }
+  .addr-row { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 12px 0; }
 }
 
 .map-overview-wrap {
@@ -276,7 +276,7 @@
     <span class="eyebrow">所在地・アクセス</span>
     <h2 class="section-title" style="font-size:28px;">スマイルームおゆみ野の所在地</h2>
 
-    <div class="grid-2 mt-6" style="grid-template-columns: 1fr 1fr; gap: 30px;">
+    <div class="grid-2 mt-6" style="grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 30px;">
       <div>
         <a
           class="map-open-link"

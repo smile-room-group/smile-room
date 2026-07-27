@@ -394,7 +394,7 @@
 }
 .f-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 28px;
 }
 .f-card {
@@ -600,7 +600,7 @@
 }
 .compare-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 28px;
   margin-bottom: 48px;
 }
@@ -719,7 +719,7 @@
   font-size: 15px;
 }
 @media (max-width: 768px) {
-  .compare-grid { grid-template-columns: 1fr; }
+  .compare-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* ===== MAP ===== */
@@ -730,7 +730,7 @@
 }
 .map-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 28px;
 }
 .map-card {
@@ -792,7 +792,7 @@
 }
 .map-card-link:hover { gap: 8px; }
 @media (max-width: 768px) {
-  .map-grid { grid-template-columns: 1fr; }
+  .map-grid { grid-template-columns: minmax(0, 1fr); }
   .map-card-frame iframe { height: 240px; }
 }
 
@@ -814,7 +814,7 @@
 .features::after { bottom: 0; }
 .feat-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 .feat-item {
@@ -861,7 +861,7 @@
 }
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .stat-item {
   text-align: center;
@@ -992,7 +992,7 @@
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   gap: 48px;
 }
 .footer-brand {
@@ -1195,7 +1195,7 @@
 }
 .comp-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   align-items: stretch;
 }
@@ -1260,7 +1260,7 @@
 
 /* スマホ：1カラムに積み上げ、スマイルームを先頭に */
 @media (max-width: 780px) {
-  .comp-cards { grid-template-columns: 1fr; }
+  .comp-cards { grid-template-columns: minmax(0, 1fr); }
   .comp-card.featured { transform: none; order: -1; }
 }
 
@@ -1277,11 +1277,11 @@
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .f-grid, .feat-grid { grid-template-columns: 1fr; }
-  .stats-grid { grid-template-columns: 1fr; }
+  .f-grid, .feat-grid { grid-template-columns: minmax(0, 1fr); }
+  .stats-grid { grid-template-columns: minmax(0, 1fr); }
   .stat-item { border-right: none; border-bottom: 1px solid oklch(0.60 0.09 14 / 0.4); }
   .stat-item:last-child { border-bottom: none; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .cta-card { padding: 36px 28px; }
   .header-btn { font-size: 12px; padding: 8px 14px; }
   .compare-table { min-width: 560px; }

@@ -30,11 +30,11 @@
 
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 26px;
 }
-@media (max-width: 880px) { .news-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 600px) { .news-grid { grid-template-columns: 1fr; } }
+@media (max-width: 880px) { .news-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+@media (max-width: 600px) { .news-grid { grid-template-columns: minmax(0, 1fr); } }
 
 .news-card {
   background: var(--card);
