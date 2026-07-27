@@ -90,7 +90,6 @@
                 <li><a href="news.html">お知らせ・ブログ</a></li>
                 <li><a href="../privacy.html">プライバシーポリシー</a></li>
               </ul>
-              <div class="review-note" data-review-id="shared-ch-01"><span class="review-note-icon">⚠</span><p>【ご確認】運営会社「株式会社カイゴマン」の表記（空白の有無など）が、登記上の正式名称と一致しているか、下のコメント欄にご記入ください。</p></div>
               <div class="review-note" data-review-id="shared-ch-02"><span class="review-note-icon">⚠</span><p>【ご確認】電話番号「0436-63-3618」・受付時間「9:00〜18:00・年中無休」が、現在も正しい連絡先・受付時間か、下のコメント欄にご記入ください。</p></div>
             </div>
             <div>
