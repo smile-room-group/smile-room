@@ -149,24 +149,6 @@ body.page-top {
   align-items: center;
   gap: 16px;
 }
-.header-tel {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--ink);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.header-tel:hover { color: var(--pink-600); }
-.header-tel .tel-label {
-  font-size: 10px;
-  background: oklch(0.98 0.01 15);
-  color: var(--pink-600);
-  padding: 1px 6px;
-  border-radius: 4px;
-}
-@media (max-width: 768px) { .header-tel { display: none !important; } }
 .header-btn {
   color: #fff;
   font-size: 12px;
@@ -1296,7 +1278,11 @@ body.page-top {
   .stat-item:last-child { border-bottom: none; }
   .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .cta-card { padding: 36px 28px; }
-  .header-btn { font-size: 12px; padding: 8px 14px; }
+  .top-header .inner { padding: 12px 16px; }
+  .top-logo { font-size: 18px; white-space: nowrap; }
+  .top-logo small { font-size: 8px; }
+  .header-actions { gap: 8px; }
+  .header-btn { font-size: 11px; padding: 7px 12px; white-space: nowrap; }
   .compare-table { min-width: 560px; }
   .orb1 { width: 240px; height: 240px; }
   .orb2 { width: 180px; height: 180px; }
@@ -1317,14 +1303,6 @@ body.page-top {
       スマイルーム
     </a>
     <div class="header-actions">
-      <a href="tel:0433107467" class="header-tel" style="display:none;" id="header-tel-oyumino">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span class="tel-label">おゆみ野</span> 043-310-7467
-      </a>
-      <a href="tel:0436633618" class="header-tel" style="display:none;color:var(--chiha-600);" id="header-tel-chiharadai">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span class="tel-label">ちはら台</span> 0436-63-3618
-      </a>
       <a href="oyumino/contact.html" class="header-btn pink">おゆみ野</a>
       <a href="chiharadai/contact.html" class="header-btn blue">ちはら台</a>
     </div>
@@ -1796,18 +1774,6 @@ body.page-top {
     window._gmapTimer = setTimeout(renderPins, 100);
   });
 }());
-
-/* ヘッダー: スクロール後に電話番号表示 */
-(function() {
-  var shown = false;
-  window.addEventListener('scroll', function() {
-    if (!shown && window.scrollY > 200) {
-      shown = true;
-      document.getElementById('header-tel-oyumino').style.display = 'flex';
-      document.getElementById('header-tel-chiharadai').style.display = 'flex';
-    }
-  });
-})();
 
 
 /* スクロールフェードイン（トップページ） */
