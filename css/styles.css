@@ -3,6 +3,58 @@
    やさしいピンク・クリーム ぬくもりテーマ
    ============================================ */
 
+/* 自前ホスティングのWebフォント（常用漢字+かな+英数字に絞ったサブセット）
+   Google Fonts経由のCSS取得往復をなくし、読み込み時のフォントちらつきを抑える */
+@font-face {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/NotoSansJP-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/NotoSansJP-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/NotoSansJP-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/NotoSansJP-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Zen Maru Gothic";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/ZenMaruGothic-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Zen Maru Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/ZenMaruGothic-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Zen Maru Gothic";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("fonts/ZenMaruGothic-900.woff2") format("woff2");
+}
+
 :root {
   /* テーマ: ダスティローズ（上品・落ち着き） */
   --bg: oklch(0.983 0.006 50);
