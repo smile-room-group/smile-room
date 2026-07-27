@@ -864,7 +864,9 @@ body.page-top {
 
 /* ===== STATS ===== */
 .stats {
-  background: var(--pink-600);
+  background: oklch(0.94 0.012 60);
+  border-top: 1px solid oklch(0.88 0.014 60);
+  border-bottom: 1px solid oklch(0.88 0.014 60);
   padding: clamp(52px, 8vw, 80px) 0;
 }
 .stats-grid {
@@ -874,8 +876,8 @@ body.page-top {
 .stat-item {
   text-align: center;
   padding: 24px 16px;
-  border-right: 1px solid oklch(0.60 0.09 14 / 0.45);
-  color: #fff;
+  border-right: 1px solid oklch(0.88 0.014 60);
+  color: var(--ink);
 }
 .stat-item:last-child { border-right: none; }
 .stat-num {
@@ -1288,7 +1290,7 @@ body.page-top {
   .f-grid, .feat-grid { grid-template-columns: minmax(0, 1fr); }
   .f-name { font-size: 20px; white-space: nowrap; }
   .stats-grid { grid-template-columns: minmax(0, 1fr); }
-  .stat-item { border-right: none; border-bottom: 1px solid oklch(0.60 0.09 14 / 0.4); }
+  .stat-item { border-right: none; border-bottom: 1px solid oklch(0.88 0.014 60); }
   .stat-item:last-child { border-bottom: none; }
   .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .cta-card { padding: 36px 28px; }
