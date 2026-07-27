@@ -189,9 +189,9 @@ body.page-top {
   overflow: hidden;
   padding: 120px 24px 100px;
   background:
-    radial-gradient(ellipse 80% 60% at 18% 20%, oklch(0.96 0.038 15 / 0.55), transparent 55%),
-    radial-gradient(ellipse 60% 50% at 85% 80%, oklch(0.95 0.032 55 / 0.45), transparent 55%),
-    radial-gradient(ellipse 40% 35% at 65% 25%, oklch(0.97 0.020 30 / 0.35), transparent 60%),
+    radial-gradient(ellipse 80% 60% at 18% 20%, oklch(0.96 0.006 60 / 0.55), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 85% 80%, oklch(0.95 0.006 60 / 0.45), transparent 55%),
+    radial-gradient(ellipse 40% 35% at 65% 25%, oklch(0.97 0.006 60 / 0.35), transparent 60%),
     var(--bg);
 }
 .hero-orb {
@@ -202,19 +202,19 @@ body.page-top {
 .orb1 {
   width: 420px; height: 420px;
   top: -100px; right: -80px;
-  background: radial-gradient(circle, oklch(0.92 0.055 20 / 0.28), transparent 70%);
+  background: radial-gradient(circle, oklch(0.92 0.055 225 / 0.28), transparent 70%);
   animation: float1 9s ease-in-out infinite;
 }
 .orb2 {
   width: 280px; height: 280px;
   bottom: 60px; left: -50px;
-  background: radial-gradient(circle, oklch(0.93 0.045 50 / 0.24), transparent 70%);
+  background: radial-gradient(circle, oklch(0.93 0.045 14 / 0.24), transparent 70%);
   animation: float2 12s ease-in-out infinite;
 }
 .orb3 {
   width: 180px; height: 180px;
   top: 32%; right: 14%;
-  background: radial-gradient(circle, oklch(0.90 0.060 18 / 0.18), transparent 70%);
+  background: radial-gradient(circle, oklch(0.90 0.060 225 / 0.18), transparent 70%);
   animation: float3 7s ease-in-out infinite;
 }
 .petals {
@@ -226,14 +226,13 @@ body.page-top {
 .petal {
   position: absolute;
   width: 12px; height: 16px;
-  background: oklch(0.88 0.070 15 / 0.16);
   border-radius: 50% 0 50% 0;
 }
-.petal:nth-child(1) { top: 16%; left: 11%; animation: float1 9s ease-in-out infinite; }
-.petal:nth-child(2) { top: 26%; right: 19%; animation: float2 12s ease-in-out 2s infinite; width: 8px; height: 11px; }
-.petal:nth-child(3) { top: 64%; left: 23%; animation: float3 8s ease-in-out 1s infinite; }
-.petal:nth-child(4) { top: 46%; right: 9%; animation: float1 10s ease-in-out 3s infinite; width: 10px; height: 14px; }
-.petal:nth-child(5) { top: 74%; right: 32%; animation: float2 9s ease-in-out 0.5s infinite; }
+.petal:nth-child(1) { top: 16%; left: 11%; background: oklch(0.88 0.070 14 / 0.16); animation: float1 9s ease-in-out infinite; }
+.petal:nth-child(2) { top: 26%; right: 19%; background: oklch(0.88 0.070 225 / 0.16); animation: float2 12s ease-in-out 2s infinite; width: 8px; height: 11px; }
+.petal:nth-child(3) { top: 64%; left: 23%; background: oklch(0.88 0.070 14 / 0.16); animation: float3 8s ease-in-out 1s infinite; }
+.petal:nth-child(4) { top: 46%; right: 9%; background: oklch(0.88 0.070 225 / 0.16); animation: float1 10s ease-in-out 3s infinite; width: 10px; height: 14px; }
+.petal:nth-child(5) { top: 74%; right: 32%; background: oklch(0.88 0.070 225 / 0.16); animation: float2 9s ease-in-out 0.5s infinite; }
 
 .hero-content { position: relative; z-index: 2; max-width: 780px; }
 
