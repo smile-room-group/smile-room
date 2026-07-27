@@ -28,6 +28,14 @@ smile-room-website/
 - ビルド不要（静的ファイル直接配信）
 - ブランチ `feature/website-brushup` が残存中。作業前に `git branch -a` で今どのブランチか確認すること
 
+### レビュー用サイトとの同期（重要）
+
+- 別リポジトリ `smile-room-group/smile-room-review`（git remote名 `review`）にレビュー確認用サイトが存在し、`https://smile-room-group.github.io/smile-room-review/` で公開されている
+- 実体は `.claude/worktrees/review-comments/`（ブランチ `worktree-review-comments`）。社長・代表など関係者はこちらのURLで確認していることがある
+- **本番用（`main`）にバグ修正をpushしたら、その都度 `worktree-review-comments` ブランチにも同じ修正を反映し `review` リモートへpushする**（例: `git cherry-pick <commit>` → `git push review worktree-review-comments:main`）
+- ただし `worktree-review-comments` はレビューコメント対応で独自の変更が乗っている場合がある。cherry-pickでコンフリクトが起きたら自動解決せず、ユーザーに確認する
+- 「直らない」という報告を受けたら、まずどちらのURLを見ているか確認すること（2026-07-27、この確認漏れで原因特定に時間がかかった実例あり）
+
 ## デザインテーマ
 
 - **カラー**: OKLch色空間で `css/styles.css` の `:root` に定義（`--pink-50〜600` 等のダスティローズ系、`--bg`/`--bg-warm`/`--ink`系）。テーマ切替は `data-theme="cream"` / `"sakura-leaf"` 属性
