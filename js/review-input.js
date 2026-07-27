@@ -89,7 +89,7 @@
     }
   }
 
-  function bindForm(block, reviewId, excerpt) {
+  function bindForm(block, reviewId, excerpt, onSubmitted) {
     const form = block.querySelector('[data-role="form"]');
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
@@ -117,6 +117,7 @@
         commentEl.value = '';
         authorEl.value = '';
         await refreshBlock(block, reviewId);
+        if (onSubmitted) onSubmitted();
       } catch (err) {
         setError(block, '送信に失敗しました。もう一度お試しください。');
       } finally {
@@ -125,13 +126,54 @@
     });
   }
 
-  function init() {
+  function createProgressBadge() {
+    const badge = document.createElement('div');
+    badge.className = 'review-progress-badge';
+    document.body.appendChild(badge);
+    return badge;
+  }
+
+  function updateProgressBadge(badge, total, answered) {
+    badge.textContent = `確認事項 ${answered} / ${total} 件 回答済み`;
+  }
+
+  async function init() {
+    // 「その他、気づいたことがあれば」の自由記述欄は件数カウントの対象外とする
+    const noteEls = qsAll('.review-note[data-review-id]:not(.review-note-freeform)');
+    if (!noteEls.length) return;
+
+    const badge = createProgressBadge();
+    const answeredIds = new Set();
+    const refreshBadge = () => updateProgressBadge(badge, noteEls.length, answeredIds.size);
+
+    try {
+      const all = await fetchAllComments();
+      const grouped = groupByReviewId(all);
+      noteEls.forEach(noteEl => {
+        const reviewId = noteEl.dataset.reviewId;
+        if (grouped[reviewId] && grouped[reviewId].length) {
+          noteEl.classList.add('is-answered');
+          answeredIds.add(reviewId);
+        }
+      });
+    } catch (err) {
+      // 集計に失敗しても各ボックス個別の読み込みは継続する
+    }
+    refreshBadge();
+
     qsAll('.review-note[data-review-id]').forEach(noteEl => {
       const reviewId = noteEl.dataset.reviewId;
       const pEl = noteEl.querySelector('p');
-      const excerpt = noteEl.classList.contains('review-note-freeform') ? '' : (pEl ? pEl.textContent.trim() : '');
+      const isFreeform = noteEl.classList.contains('review-note-freeform');
+      const excerpt = isFreeform ? '' : (pEl ? pEl.textContent.trim() : '');
       const block = buildBlock(noteEl);
-      bindForm(block, reviewId, excerpt);
+      bindForm(block, reviewId, excerpt, function () {
+        if (!isFreeform && !answeredIds.has(reviewId)) {
+          noteEl.classList.add('is-answered');
+          answeredIds.add(reviewId);
+          refreshBadge();
+        }
+      });
       refreshBlock(block, reviewId);
     });
   }

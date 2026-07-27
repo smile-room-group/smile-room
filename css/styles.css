@@ -1433,6 +1433,22 @@ details[open] .faq-chevron { transform: rotate(180deg); }
 @media (max-width: 600px) {
   .review-comments { padding: 10px; }
 }
+.review-progress-badge {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 500;
+  background: var(--pink-500);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+@media (max-width: 600px) {
+  .review-progress-badge { right: 10px; bottom: 10px; font-size: 12px; padding: 6px 14px; }
+}
 
 /* =================== 確認用コメント =================== */
 .review-note {
@@ -1447,6 +1463,11 @@ details[open] .faq-chevron { transform: rotate(180deg); }
   display: flex;
   gap: 10px;
   align-items: flex-start;
+}
+.review-note.is-answered {
+  border-style: solid;
+  border-color: var(--pink-200);
+  opacity: 0.6;
 }
 .review-note p {
   margin: 0;
