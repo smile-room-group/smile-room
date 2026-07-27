@@ -1450,6 +1450,22 @@ details[open] .faq-chevron { transform: rotate(180deg); }
   .review-progress-badge { right: 10px; bottom: 10px; font-size: 12px; padding: 6px 14px; }
 }
 
+.review-guide-banner {
+  position: sticky;
+  top: 0;
+  z-index: 600;
+  background: var(--pink-500);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 16px;
+  line-height: 1.5;
+}
+@media (max-width: 600px) {
+  .review-guide-banner { font-size: 12px; padding: 8px 12px; }
+}
+
 /* =================== 確認用コメント =================== */
 .review-note {
   background: white;

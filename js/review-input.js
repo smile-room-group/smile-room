@@ -137,10 +137,23 @@
     badge.textContent = `確認事項 ${answered} / ${total} 件 回答済み`;
   }
 
+  function isTopPage() {
+    return currentPage() === '/' || /(^|\/)index\.html$/.test(currentPage());
+  }
+
+  function createGuideBanner() {
+    const banner = document.createElement('div');
+    banner.className = 'review-guide-banner';
+    banner.textContent = 'ピンク枠が確認してほしい箇所です。気づいたことをそのまま日本語でコメント欄に書いてください。';
+    document.body.insertBefore(banner, document.body.firstChild);
+  }
+
   async function init() {
     // 「その他、気づいたことがあれば」の自由記述欄は件数カウントの対象外とする
     const noteEls = qsAll('.review-note[data-review-id]:not(.review-note-freeform)');
     if (!noteEls.length) return;
+
+    if (isTopPage()) createGuideBanner();
 
     const badge = createProgressBadge();
     const answeredIds = new Set();
