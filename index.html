@@ -166,15 +166,16 @@ body.page-top {
 }
 @media (max-width: 768px) { .header-tel { display: none !important; } }
 .header-btn {
-  background: var(--pink-600);
   color: #fff;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  padding: 9px 20px;
+  padding: 8px 16px;
   border-radius: 100px;
   text-decoration: none;
   transition: opacity .15s, transform .15s;
 }
+.header-btn.pink { background: var(--pink-600); }
+.header-btn.blue { background: var(--chiha-600); }
 .header-btn:hover { opacity: .88; transform: translateY(-1px); }
 
 /* ===== HERO ===== */
@@ -300,7 +301,6 @@ body.page-top {
   justify-content: center;
   gap: 8px;
   min-width: 220px;
-  background: var(--pink-600);
   color: #fff;
   font-family: "Zen Maru Gothic", sans-serif;
   font-weight: 700;
@@ -308,12 +308,14 @@ body.page-top {
   padding: 16px 32px;
   border-radius: 100px;
   text-decoration: none;
-  box-shadow: 0 8px 28px oklch(0.50 0.115 14 / 0.35);
   transition: transform .2s, box-shadow .2s, opacity .2s;
 }
+.btn-primary-hero.pink { background: var(--pink-600); box-shadow: 0 8px 28px oklch(0.50 0.115 14 / 0.35); }
+.btn-primary-hero.pink:hover { box-shadow: 0 14px 36px oklch(0.50 0.115 14 / 0.42); }
+.btn-primary-hero.blue { background: var(--chiha-600); box-shadow: 0 8px 28px oklch(0.50 0.115 225 / 0.35); }
+.btn-primary-hero.blue:hover { box-shadow: 0 14px 36px oklch(0.50 0.115 225 / 0.42); }
 .btn-primary-hero:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 36px oklch(0.50 0.115 14 / 0.42);
   opacity: .92;
 }
 .btn-ghost-hero {
@@ -1319,7 +1321,8 @@ body.page-top {
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <span class="tel-label">ちはら台</span> 0436-63-3618
       </a>
-      <a href="oyumino/contact.html" class="header-btn">見学予約</a>
+      <a href="oyumino/contact.html" class="header-btn pink">おゆみ野</a>
+      <a href="chiharadai/contact.html" class="header-btn blue">ちはら台</a>
     </div>
   </div>
 </header>
@@ -1344,8 +1347,9 @@ body.page-top {
       「スマイルーム」は、介護施設ではなく高齢者対応賃貸住宅です。<br>自由に介護サービスを選び、自分のペースで暮らせる場所を。
     </p>
     <div class="hero-cta a4">
-      <a href="oyumino/contact.html" class="btn-primary-hero">見学予約（無料）</a>
-      <a href="oyumino/contact.html" class="btn-ghost-hero">まず資料を取り寄せる</a>
+      <a href="oyumino/contact.html" class="btn-primary-hero pink">おゆみ野を見学予約</a>
+      <a href="chiharadai/contact.html" class="btn-primary-hero blue">ちはら台を見学予約</a>
+      <a href="#facilities" class="btn-ghost-hero">まず資料を取り寄せる</a>
     </div>
   </div>
 
@@ -1422,7 +1426,7 @@ body.page-top {
 </section>
 
 <!-- FACILITIES -->
-<section class="facilities">
+<section class="facilities" id="facilities">
   <div class="wrap">
     <p class="sec-label">施設のご案内</p>
     <h2 class="sec-title">2つの施設から、<br>あなたに合う場所を。</h2>
