@@ -348,11 +348,13 @@
   color: var(--pink-600);
   margin-bottom: 4px;
 }
-.plan-title { font-size: 22px; margin-bottom: 18px; }
+.plan-title { font-size: 22px; margin-bottom: 14px; }
 .plan-price {
   display: flex; align-items: baseline; gap: 4px;
-  margin-bottom: 6px;
+  margin-bottom: 14px;
+  min-height: 84px;
 }
+.plan-price::before { content: "0"; font-family: "Zen Maru Gothic"; font-size: 44px; font-weight: 700; visibility: hidden; width: 0; overflow: hidden; margin-right: -4px; }
 .plan-price .num {
   font-family: "Zen Maru Gothic";
   font-size: 44px;
