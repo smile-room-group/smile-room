@@ -327,8 +327,10 @@ body.page-top {
 .scroll-hint {
   position: absolute;
   bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  width: fit-content;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -378,6 +380,7 @@ body.page-top {
   line-height: 1.45;
   margin-bottom: 52px;
 }
+.br-mobile { display: none; }
 
 /* ===== FACILITIES ===== */
 .facilities {
@@ -794,6 +797,8 @@ body.page-top {
   background: var(--bg-warm);
   position: relative;
 }
+.features .sec-label { justify-content: center; }
+.features .sec-title { text-align: center; }
 .features::before,
 .features::after {
   content: "";
@@ -1285,6 +1290,7 @@ body.page-top {
   .orb2 { width: 180px; height: 180px; }
   .orb3 { display: none; }
   .f-body { padding: 28px 24px 24px; }
+  .br-mobile { display: inline; }
 }
 
 </style>
@@ -1343,7 +1349,7 @@ body.page-top {
   <div class="wrap">
     <div class="reveal family-intro">
       <p class="sec-label">ご家族の方へ</p>
-      <h2 class="sec-title">離れて暮らすご両親のこと、<br>心配ではありませんか？</h2>
+      <h2 class="sec-title">離れて暮らす<br class="br-mobile">ご両親のこと、<br>心配ではありませんか？</h2>
       <p class="family-intro-text">「施設に入れるのはかわいそう」「でも一人でいるのは心配」——そのジレンマに、スマイルームは<strong>第三の選択肢</strong>として応えます。<br>介護施設ではなく、自分らしく暮らしながら必要なサポートだけを受けられる、新しい住まいのかたちです。</p>
     </div>
     <div class="reveal family-grid">
