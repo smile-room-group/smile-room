@@ -350,21 +350,23 @@
 }
 .plan-title { font-size: 22px; margin-bottom: 14px; }
 .plan-price {
-  display: flex; align-items: baseline; gap: 4px;
   margin-bottom: 14px;
   min-height: 84px;
+  display: flex;
+  align-items: center;
 }
-.plan-price::before { content: "0"; font-family: "Zen Maru Gothic"; font-size: 44px; font-weight: 700; visibility: hidden; width: 0; overflow: hidden; margin-right: -4px; }
-.plan-price .num, .plan-price::before { line-height: 1; }
 .plan-price .num {
+  display: inline-block; vertical-align: baseline;
   font-family: "Zen Maru Gothic";
   font-size: 44px;
   font-weight: 700;
   color: var(--pink-600);
   letter-spacing: 0.01em;
+  line-height: 1;
+  margin-right: 4px;
 }
-.plan-price .unit { font-size: 16px; color: var(--ink-soft); font-weight: 700; }
-.plan-price .from { font-size: 13px; color: var(--ink-mute); }
+.plan-price .unit { display: inline-block; vertical-align: baseline; font-size: 16px; color: var(--ink-soft); font-weight: 700; }
+.plan-price .from { display: inline-block; vertical-align: baseline; font-size: 13px; color: var(--ink-mute); }
 .plan-note { font-size: 12.5px; color: var(--ink-mute); margin-bottom: 22px; }
 .plan-total { display: flex; align-items: center; gap: 8px; background: oklch(0.95 0.03 20); border: 1px solid oklch(0.86 0.05 20); border-radius: var(--radius); padding: 10px 14px; margin-bottom: 22px; font-size: 13px; }
 .plan-total .label { color: var(--ink-mute); white-space: nowrap; }
@@ -929,7 +931,7 @@
         <div class="plan-name">A TYPE</div>
         <div class="plan-title">スタンダード</div>
         <div class="plan-price">
-          <span class="num">106,800</span><span class="unit">円</span><span class="from">/ 月〜</span>
+          <span class="price-text"><span class="num">106,800</span><span class="unit">円</span><span class="from">/ 月〜</span></span>
         </div>
         <div class="plan-note plan-note--allin">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -949,7 +951,7 @@
         <div class="plan-name">B TYPE</div>
         <div class="plan-title">ゆったり</div>
         <div class="plan-price">
-          <span class="num">109,800</span><span class="unit">円</span><span class="from">/ 月〜</span>
+          <span class="price-text"><span class="num">109,800</span><span class="unit">円</span><span class="from">/ 月〜</span></span>
         </div>
         <div class="plan-note plan-note--allin">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
