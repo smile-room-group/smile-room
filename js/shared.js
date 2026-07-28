@@ -122,24 +122,6 @@
     document.querySelectorAll(".reveal").forEach(el => io.observe(el));
   }
 
-  /* ===== font-size switcher ===== */
-  function setupFontSize() {
-    const stored = localStorage.getItem("smileroom-fontsize") || "normal";
-    document.documentElement.setAttribute("data-fontsize", stored);
-
-    document.querySelectorAll(".font-size-switcher button").forEach(btn => {
-      btn.setAttribute("aria-pressed", btn.dataset.fsz === stored ? "true" : "false");
-      btn.addEventListener("click", () => {
-        const size = btn.dataset.fsz;
-        document.documentElement.setAttribute("data-fontsize", size);
-        localStorage.setItem("smileroom-fontsize", size);
-        document.querySelectorAll(".font-size-switcher button").forEach(b => {
-          b.setAttribute("aria-pressed", b.dataset.fsz === size ? "true" : "false");
-        });
-      });
-    });
-  }
-
   /* ===== floating bar ===== */
   function setupFloatingBar() {
     const bar = document.createElement("div");
