@@ -158,8 +158,23 @@
 @media (max-width: 880px) {
   .hero-grid { grid-template-columns: minmax(0, 1fr); }
   .hero-visual { aspect-ratio: 4 / 3; border-radius: 30px; max-width: 100%; }
+  .hero-badge { padding: 10px 14px; gap: 10px; }
+  .hero-badge .icon { width: 34px; height: 34px; }
+  .hero-badge .label { font-size: 10px; }
+  .hero-badge .val { font-size: 13px; }
+  .hero-badge .val em { font-size: 17px; }
   .hero-badge.b1 { left: 12px; }
   .hero-badge.b2 { right: 12px; }
+}
+@media (max-width: 480px) {
+  .hero-badge { padding: 8px 12px; gap: 8px; border-radius: 14px; }
+  .hero-badge .icon { width: 28px; height: 28px; border-radius: 8px; }
+  .hero-badge .icon svg { width: 15px; height: 15px; }
+  .hero-badge .label { font-size: 9px; }
+  .hero-badge .val { font-size: 11.5px; }
+  .hero-badge .val em { font-size: 14px; }
+  .hero-badge.b1 { top: 10px; left: 10px; }
+  .hero-badge.b2 { bottom: 10px; right: 10px; }
 }
 
 .hero-deco {
