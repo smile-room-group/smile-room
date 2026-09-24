@@ -15,6 +15,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://smile-room-group.github.io/smile-room/oyumino/lp-chiba-senior.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://smile-room-group.github.io/smile-room/oyumino/pricing.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
